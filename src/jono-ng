@@ -1,0 +1,581 @@
+#!/bin/bash
+#--------------------------------------------
+#..............: jono-ng
+#..............: Script Bash sederhana yang dirancang untuk meng-crack berbagai jenis file menggunakan John the Ripper (JtR).
+#..............: v1.0
+#..............: Rofi (Fixploit03)
+#..............: https://github.com/fixploit03/jono-ng
+#
+#---------------- DISCLAIMER ----------------
+#
+# Script ini saya buat hanya untuk tujuan edukasi dan pembelajaran saja,
+# tidak ada niatan untuk mendorong atau mempromosikan kegiatan yang
+# melanggar hukum!. Gunakan script ini dengan bijak, gunakan hanya
+# pada file yang Anda miliki, jangan gunakan script ini untuk mengcrack
+# file orang lain.
+#
+#----------------- LISENSI ------------------
+#
+# Hak Cipta (c) 2025 Rofi (Fixploit03)
+#
+# Dengan ini izin diberikan secara gratis kepada siapa pun yang memperoleh
+# salinan perangkat lunak ini dan file dokumentasi terkait ("Perangkat Lunak"),
+# untuk memperbolehkan penggunaan Perangkat Lunak tanpa batasan, termasuk hak
+# untuk menggunakan, menyalin, memodifikasi, menggabungkan, menerbitkan,
+# mendistribusikan, melisensikan kembali, dan/atau menjual salinan Perangkat
+# Lunak, serta mengizinkan orang yang diberikan Perangkat Lunak untuk
+# melakukannya, dengan ketentuan berikut:
+#
+# Pemberitahuan hak cipta dan pemberitahuan izin ini harus disertakan dalam
+# semua salinan atau bagian substansial dari Perangkat Lunak.
+#
+# PERANGKAT LUNAK INI DIBERIKAN "SEBAGAIMANA ADANYA", TANPA JAMINAN APA PUN,
+# BAIK TERSURAT MAUPUN TERSIRAT, TERMASUK NAMUN TIDAK TERBATAS PADA JAMINAN
+# KELAYAKAN UNTUK DIPERJUALBELIKAN, KESESUAIAN UNTUK TUJUAN TERTENTU, DAN
+# BEBAS DARI PELANGGARAN. DALAM HAL APA PUN, PARA PENULIS ATAU PEMEGANG
+# HAK CIPTA TIDAK BERTANGGUNG JAWAB ATAS TUNTUTAN, KERUSAKAN, ATAU KEWAJIBAN
+# LAIN,BAIK DALAM KONTRAK, PERBUATAN MELAWAN HUKUM, ATAU HAL LAIN YANG TIMBUL
+# DARI, KELUAR DARI, ATAU SEHUBUNGAN DENGAN PERANGKAT LUNAK ATAU PENGGUNAAN
+# ATAU TRANSAKSI LAIN DALAM PERANGKAT LUNAK.
+#
+#--------------------------------------------
+#
+# Script ini 100% Free alias Gratis (Open Source)
+#
+#--------------------------------------------
+
+# Variabel warna
+m="\e[1;31m"   # merah
+h="\e[1;32m"   # hijau
+k="\e[1;33m"   # kuning
+b="\e[1;34m"   # biru
+p="\e[1;37m"   # putih
+r="\e[0m"      # reset
+ij=$'\e[1;32m' # input hijau
+ib=$'\e[1;34m' # input biru
+ip=$'\e[1;37m' # input kuning
+ir=$'\e[0m'    # input reset
+
+# Tentang script
+nama="jono-ng"
+deskripsi="Script Bash sederhana yang dirancang untuk meng-crack berbagai jenis file menggunakan John the Ripper (JtR)."
+versi="1.0"
+pembuat="Rofi (Fixploit03)"
+github="https://github.com/fixploit03/jono-ng"
+
+# Fungsi untuk keluar dari sript (OK)
+function keluar(){
+	echo ""
+	echo -e "${p}Bye... ${m};)${r}"
+	exit 0
+}
+
+# Fungsi untuk kembali ke menu utama (OK)
+function home(){
+	echo ""
+	read -p "${ip}Tekan [${ij}Enter${ip}] untuk kembali ke menu utama...${ir}"
+	main
+}
+
+# Fungsi untuk memulai proses cracking kata sandi file (OK)
+function start_attack(){
+	echo ""
+	read -p "${ip}Tekan [${ij}Enter${ip}] untuk memulai proses cracking...${ir}"
+}
+
+# Fungsi untuk menampilkan waktu mulai proses cracking (OK)
+function waktu_mulai_serangan(){
+	tanggal=$(date +"%d-%m-%Y")
+	jam=$(date +"%H:%M:%S")
+	waktu_mulai="/${tanggal}/ ${jam}"
+	echo -e "${b}[*] ${p}Dimulai pada: ${b}${waktu_mulai}${r}"
+}
+
+# Fungsi untuk menampilkan waktu selesai proses cracking (OK)
+function waktu_selesai_serangan(){
+	tanggal=$(date +"%d-%m-%Y")
+	jam=$(date +"%H:%M:%S")
+	waktu_selesai="/${tanggal}/ ${jam}"
+	echo -e "${b}[*] ${p}Selesai pada: ${b}${waktu_selesai}${r}"
+}
+
+# Fungsi untuk membersihkan atau menghapus file yang tidak dibutuhkan lagi (OK)
+function clean(){
+	if [[ -f "error.txt" ]]; then
+		rm "error.txt"
+	fi
+	if [[ -f "${file_hash}" ]]; then
+		rm "${file_hash}"
+	fi
+	if [[ -f "${file_pot}" ]]; then
+		rm "${file_pot}"
+	fi
+}
+
+# Fungsi untuk input atau memasukkan file yang mau di-crack
+function input_file(){
+	# ZIP
+	if [[ "${pilih_menu}" == "1" ]]; then
+		jenis_file="ZIP"
+		ekstensi_zip="zip"
+		# banner ZIP
+		clear
+		echo -e "${b}d88888D d888888b d8888b           o88b  d8888b    d8b     o88b  db   dD ${r}"
+		echo -e "${b}YP  d8     88    88   8D        d8P  Y8 88   8D d8   8b d8P  Y8 88  8P  ${r}"
+		echo -e "${b}   d8      88    88oodD         8P      88oobY  88ooo88 8P      88 8P   ${r}"
+		echo -e "${b}  d8       88    88      C8888D 8b      88 8b   88   88 8b      88 8b   ${r}"
+		echo -e "${b} d8  db    88    88             Y8b  d8 88  88  88   88 Y8b  d8 88  88  ${r}"
+		echo -e "${b}d88888P Y888888P 88               Y88P  88   YD YP   YP   Y88P  YP   YD ${r}"
+		echo ""
+		echo -e "       ${m}Dibuat oleh: ${pembuat}${r}"
+		echo -e "       ${m}Versi: v${versi}${r}"
+		echo -e "       ${m}Github: ${github}${r}"
+		echo ""
+	# RAR
+	elif [[ "${pilih_menu}" == "2" ]]; then
+		jenis_file="RAR"
+		ekstensi_rar="rar"
+		# banner RAR
+		clear
+		echo -e "${b}d8888b    d8b   d8888b           o88b  d8888b    d8b     o88b  db   dD d88888b d8888b  ${r}"
+		echo -e "${b}88   8D d8   8b 88   8D        d8P  Y8 88   8D d8   8b d8P  Y8 88  8P  88      88   8D ${r}"
+		echo -e "${b}88oobY  88ooo88 88oobY         8P      88oobY  88ooo88 8P      88 8P   88ooooo 88oobY  ${r}"
+		echo -e "${b}88 8b   88   88 88 8b   C8888D 8b      88 8b   88   88 8b      88 8b   88      88 8b   ${r}"
+		echo -e "${b}88  88  88   88 88  88         Y8b  d8 88  88  88   88 Y8b  d8 88  88  88      88  88  ${r}"
+		echo -e "${b}88   YD YP   YP 88   YD          Y88P  88   YD YP   YP   Y88P  YP   YD Y88888P 88   YD ${r}"
+		echo ""
+		echo -e "       ${m}Dibuat oleh: ${pembuat}${r}"
+		echo -e "       ${m}Versi: v${versi}${r}"
+		echo -e "       ${m}Github: ${github}${r}"
+		echo ""
+	# 7z
+	elif [[ "${pilih_menu}" == "3" ]]; then
+		jenis_file="7z"
+		ekstensi_7z="7z"
+		# banner 7z
+		clear
+		echo -e "${b}d88888D d88888D          o88b  d8888b    d8b     o88b  db   dD d88888b d8888b  ${r}"
+		echo -e "${b}VP  d8  YP  d8         d8P  Y8 88   8D d8   8b d8P  Y8 88  8P  88      88   8D ${r}"
+		echo -e "${b}   d8      d8          8P      88oobY  88ooo88 8P      88 8P   88ooooo 88oobY  ${r}"
+		echo -e "${b}  d8      d8    C8888D 8b      88 8b   88   88 8b      88 8b   88      88 8b   ${r}"
+		echo -e "${b} d8      d8  db        Y8b  d8 88  88  88   88 Y8b  d8 88  88  88      88  88  ${r}"
+		echo -e "${b}d8      d88888P          Y88P  88   YD YP   YP   Y88P  YP   YD Y88888P 88   YD ${r}"
+		echo ""
+		echo -e "       ${m}Dibuat oleh: ${pembuat}${r}"
+		echo -e "       ${m}Versi: v${versi}${r}"
+		echo -e "       ${m}Github: ${github}${r}"
+		echo ""
+	# PDF
+	elif [[ "${pilih_menu}" == "4" ]]; then
+		jenis_file="PDF"
+		ekstensi_pdf="pdf"
+		#banner PDF
+		clear
+		echo -e "${b}d8888b  d8888b  d88888b          o88b  d8888b    d8b     o88b  db   dD d88888b d8888b  ${r}"
+		echo -e "${b}88   8D 88   8D 8              d8P  Y8 88   8D d8   8b d8P  Y8 88  8P  88      88   8D ${r}"
+		echo -e "${b}88oodD  88   88 88ooo          8P      88oobY  88ooo88 8P      88 8P   88ooooo 88oobY  ${r}"
+		echo -e "${b}88      88   88 88      C8888D 8b      88 8b   88   88 8b      88 8b   88      88 8b   ${r}"
+		echo -e "${b}88      88   8D 88             Y8b  d8 88  88  88   88 Y8b  d8 88  88  88      88  88  ${r}"
+		echo -e "${b}88      Y8888D  YP               Y88P  88   YD YP   YP   Y88P  YP   YD Y88888P 88   YD ${r}"
+		echo ""
+		echo -e "       ${m}Dibuat oleh: ${pembuat}${r}"
+		echo -e "       ${m}Versi: v${versi}${r}"
+		echo -e "       ${m}Github: ${github}${r}"
+		echo ""
+	# Office (.docx, .xlsx, .pptx)
+	elif [[ "${pilih_menu}" == "5" ]]; then
+		jenis_file="Office"
+	# LibreOffice (.odt, .ods, .odp)
+	elif [[ "${pilih_menu}" == "2" ]]; then
+		jenis_file="LibreOffice"
+	fi
+
+	while true; do
+		read -p "${ib}[#] ${ip}Masukkan nama file ${jenis_file}: " file
+		if [[ -z "${file}" ]]; then
+			echo -e "${m}[-] ${p}Nama file ${jenis_file} tidak boleh kosong.${r}"
+			continue
+		elif [[ ! -f "${file}" ]]; then
+			echo -e "${m}[-] ${p}File ${jenis_file} tidak ditemukan.${r}"
+			continue
+		else
+			ekstensi_file="${file##*.}"
+			if [[ "${jenis_file}" == "ZIP" ]]; then
+				if [[ "${ekstensi_file}" != "${ekstensi_zip}" ]]; then
+					echo -e "${m}[-] ${p}File bukan file ${jenis_file}.${r}"
+					continue
+				else
+					echo -e "${h}[+] ${p}File ${jenis_file} ditemukan.${r}"
+					break
+				fi
+			elif [[ "${jenis_file}" == "RAR" ]]; then
+				if [[ "${ekstensi_file}" != "${ekstensi_rar}" ]]; then
+					echo -e "${m}[-] ${p}File bukan file ${jenis_file}.${r}"
+					continue
+				else
+					echo -e "${h}[+] ${p}File ${jenis_file} ditemukan.${r}"
+					break
+				fi
+			elif [[ "${jenis_file}" == "7z" ]]; then
+				if [[ "${ekstensi_file}" != "${ekstensi_7z}" ]]; then
+					echo -e "${m}[-] ${p}File bukan file ${jenis_file}.${r}"
+					continue
+				else
+					echo -e "${h}[+] ${p}File ${jenis_file} ditemukan.${r}"
+					break
+				fi
+			elif [[ "${jenis_file}" == "PDF" ]]; then
+				if [[ "${ekstensi_file}" != "${ekstensi_pdf}" ]]; then
+					echo -e "${m}[-] ${p}File bukan file ${jenis_file}.${r}"
+					continue
+				else
+					echo -e "${h}[+] ${p}File ${jenis_file} ditemukan.${r}"
+					break
+				fi
+			fi
+		fi
+	done
+}
+
+# Fungsi untuk mengekstrak hash file
+function ekstrak_hash_file(){
+	echo -e "${b}[*] ${p}Mengekstrak hash file ${jenis_file}...${r}"
+
+	file_hash="${file}_hash.txt"
+
+	# ZIP
+	if [[ "${jenis_file}" == "ZIP" ]]; then
+		zip2john "${file}" 1> "${file_hash}" 2> "error.txt"
+		if [[ $? -ne 0 ]]; then
+			echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+			clean
+			home
+		else
+			if grep -qo "Did not find End Of Central Directory" "error.txt"; then
+				echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+				echo -e "${m}[-] ${p}File ${jenis_file} tidak valid atau rusak.${r}"
+				clean
+				home
+			elif grep -qo "is not encrypted" "error.txt"; then
+				echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+				echo -e "${m}[-] ${p}File ${jenis_file} tidak dienkripsi.${r}"
+				clean
+				home
+			else
+				echo -e "${h}[+] ${p}Hash file ${jenis_file} berhasil diekstrak.${r}"
+			fi
+		fi
+	elif [[ "${jenis_file}" == "RAR" ]]; then
+		rar2john "${file}" 1> "${file_hash}" 2> "error.txt"
+		if [[ $? -ne 0 ]]; then
+			echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+			clean
+			home
+		else
+			if grep -qo "Not a RAR file" "error.txt"; then
+				echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+				echo -e "${m}[-] ${p}File ${jenis_file} tidak valid atau rusak.${r}"
+				clean
+				home
+			elif grep -qo "Did not find a valid encrypted candidate in" "error.txt"; then
+				echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+				echo -e "${m}[-] ${p}File ${jenis_file} tidak dienkripsi.${r}"
+				clean
+				home
+			else
+				echo -e "${h}[+] ${p}Hash file ${jenis_file} berhasil diekstrak.${r}"
+			fi
+		fi
+	elif [[ "${jenis_file}" == "7z" ]]; then
+		7z2john "${file}" 1> "${file_hash}" 2> "error.txt"
+		if [[ $? -ne 0 ]]; then
+			echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+			clean
+			home
+		else
+			if grep -qo "7-Zip file nor a supported SFX file" "error.txt"; then
+				echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+				echo -e "${m}[-] ${p}File ${jenis_file} tidak valid atau rusak.${r}"
+				clean
+				home
+			elif grep -qo "lzma2 compression found within" "error.txt"; then
+				echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+				echo -e "${m}[-] ${p}File ${jenis_file} tidak dienkripsi.${r}"
+				clean
+				home
+			else
+				echo -e "${h}[+] ${p}Hash file ${jenis_file} berhasil diekstrak.${r}"
+			fi
+		fi
+	elif [[ "${jenis_file}" == "PDF" ]]; then
+		pdf2john "${file}" > "${file_hash}"
+		if [[ $? -ne 0 ]]; then
+			echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+			clean
+			home
+		else
+			if grep -qo "not a PDF file!" "${file_hash}"; then
+				echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+				echo -e "${m}[-] ${p}File ${jenis_file} tidak valid atau rusak.${r}"
+				clean
+				home
+			elif grep -qo "not encrypted!" "${file_hash}"; then
+				echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+				echo -e "${m}[-] ${p}File ${jenis_file} tidak dienkripsi.${r}"
+				clean
+				home
+			else
+				echo -e "${h}[+] ${p}Hash file ${jenis_file} berhasil diekstrak.${r}"
+			fi
+		fi
+	fi
+}
+
+# Fungsi untuk menyeting file Wordlist (OK)
+function seting_wordlist(){
+	while true; do
+		read -p "${ib}[#] ${ip}Masukkan nama file Wordlist: " file_wordlist
+		if [[ -z "${file_wordlist}" ]]; then
+			echo -e "${m}[-] ${p}Nama file Wordlist tidak boleh kosong.${r}"
+			continue
+		elif [[ ! -f "${file_wordlist}" ]]; then
+			echo -e "${m}[-] ${p}File Wordlist tidak ditemukan.${r}"
+			continue
+		else
+			echo -e "${h}[+] ${p}File Wordlist ditemukan.${r}"
+			break
+		fi
+	done
+}
+
+# Fungsi untuk menyeting panjang kata sandi (OK)
+function seting_panjang_kata_sandi(){
+	# Seting panjang minimal kata sandi
+	while true; do
+		read -p "${ib}[#] ${ip}Masukkan panjang minimal kata sandi: " min
+		if [[ -z "${min}" ]]; then
+			echo -e "${m}[-] ${p}Panjang minimal kata sandi tidak boleh kosong.${r}"
+			continue
+		elif [[ ! "${min}" =~ ^[0-9]+$ ]] ;then
+			echo -e "${m}[-] ${p}Masukkan tidak valid. Harap masukkan angka.${r}"
+			continue
+		elif [[ "${min}" =~ ^0 ]]; then
+			echo -e "${m}[-] ${p}Panjang minimal kata sandi tidak boleh diawali dengan angka 0.${r}"
+			continue
+		else
+			break
+		fi
+	done
+
+	# Seting panjang maksimal kata sandi
+	while true; do
+		read -p "${ib}[#] ${ip}Masukkan panjang maksimal kata sandi: " maks
+		if [[ -z "${maks}" ]]; then
+			echo -e "${m}[-] ${p}Panjang maksimal kata sandi tidak boleh kosong.${r}"
+			continue
+		elif [[ ! "${maks}" =~ ^[0-9]+$ ]]; then
+			echo -e "${m}[-] ${p}Masukkan tidak valid. Harap masukkan angka.${r}"
+			continue
+		elif [[ ! "${maks}" -ge "${min}" ]]; then
+			echo -e "${m}[-] ${p}Panjang maksimal kata sandi harus lebih besar atau sama dengan panjang minimal kata sandi.${r}"
+			continue
+		else
+			break
+		fi
+	done
+}
+
+# Fungsi untuk menentukan pola mask yang ingin digunakan
+function seting_pola_mask(){
+	echo ""
+	echo -e "${m}Daftar pola Mask:${r}"
+	echo ""
+	echo -e "       ${h}[?l] ${p}Huruf kecil (${h}a-z${p})${r}"
+	echo -e "       ${h}[?u] ${p}Huruf besar (${h}A-Z${p})${r}"
+	echo -e "       ${h}[?d] ${p}Angka (${h}0-9${p})${r}"
+	echo -e "       ${h}[?s] ${p}Simbol (${h}#-@${p})${r}"
+	echo -e "       ${h}[?a] ${p}Semua karakter (${h}Huruf kecil, Huruf besar, Angka dan Simbol${p})${r}"
+	echo ""
+
+	while true; do
+		read -p "${ib}[#] ${ip}Masukkan pola mask (${ib}?l?u?d?s?a${ip}): " pola_mask
+
+		if [[ -z "${pola_mask}" ]]; then
+			echo -e "${m}[-] ${p}Pola mask tidak boleh kosong.${r}"
+			continue
+		else
+			if [[ ! "${pola_mask}" =~ ^(\?l|\?u|\?d|\?s|\?a)+$ ]]; then
+				echo -e "${m}[-] ${p}Pola mask tidak valid.${r}"
+				continue
+			else
+				break
+			fi
+		fi
+	done
+}
+
+# Fungsi untuk menyenting kombinasi karakter (OK)
+function seting_kombinasi_karakter(){
+	while true; do
+		read -p "${ib}[#] ${ip}Masukkan kombinasi karakter (${ib}aA1!${ip}): " kombinasi
+		if [[ -z "${kombinasi}" ]]; then
+			echo -e "${m}[-] ${p}Kombinasi karakter tidak boleh kosong.${r}"
+			continue
+		else
+			break
+		fi
+	done
+}
+
+# Fungsi untuk menyeting teknik yang ingin digunakan (OK)
+function seting_teknik(){
+	echo ""
+	echo -e "${m}Daftar teknik yang tersedia untuk meng-crack kata sandi:${r}"
+	echo ""
+	echo -e "       ${h}[1] ${p}Dictionary Attack${r}"
+	echo -e "       ${h}[2] ${p}Brute Force Attack${r}"
+	echo -e "       ${h}[3] ${p}Mask Attack${r}"
+	echo -e "       ${h}[4] ${p}Prince Attack${r}"
+	echo -e "       ${h}[5] ${p}Subsets Attack${r}"
+	echo ""
+	while true; do
+		read -p "${ib}[#] ${ip}Pilih teknik yang ingin digunakan (${ib}1-5${ip}): " pilih_teknik
+		if [[ "${pilih_teknik}" == "1" ]]; then
+			seting_wordlist
+			teknik="--wordlist=${file_wordlist}"
+			start_attack
+			break
+		elif [[ "${pilih_teknik}" == "2" ]]; then
+			seting_panjang_kata_sandi
+			teknik="--incremental --min-length=${min} --max-length=${maks}"
+			break
+		elif [[ "${pilih_teknik}" == "3" ]]; then
+			seting_pola_mask
+			teknik="--mask=${pola_mask}"
+			break
+		elif [[ "${pilih_teknik}" == "4" ]]; then
+			seting_wordlist
+			teknik="--prince=${file_wordlist}"
+			break
+		elif [[ "${pilih_teknik}" == "5" ]]; then
+			seting_panjang_kata_sandi
+			seting_kombinasi_karakter
+			teknik="--subsets=${kombinasi} --min-length=${min} --max-length=${maks}"
+			break
+		fi
+	done
+}
+
+# Fungsin untuk mengcrack kata sandi file menggunakan JtR
+function run_john(){
+
+	file_pot="cracked.txt"
+
+	if [[ "${jenis_file}" == "ZIP" ]]; then
+		if grep -qo "pkzip" "${file_hash}"; then
+			format="PKZIP"
+		elif grep -qo "zip2" "${file_hash}"; then
+			format="ZIP"
+		fi
+	elif [[ "${jenis_file}" == "RAR" ]]; then
+		format="RAR5"
+	elif [[ "${jenis_file}" == "7z" ]]; then
+		format="7z"
+	elif [[ "${jenis_file}" == "PDF" ]]; then
+		format="PDF"
+	fi
+
+	echo ""
+	echo -e "${b}[*] ${p}Mengcrack kata sandi file ${jenis_file}...${r}"
+
+	waktu_mulai_serangan
+
+	john ${teknik} --format="${format}" --pot="${file_pot}" "${file_hash}"
+	john --show --format="${format}" --pot="${file_pot}" "${file_hash}"
+
+	if [[ -f "${file_pot}" ]]; then
+		if grep -qo ":" "${file_pot}"; then
+			kata_sandi=$(cat "${file_pot}" | cut -d ':' -f 2)
+			echo ""
+			echo -e "${h}[+] ${p}Kata sandi file ${jenis_file} ditemukan.${r}"
+			echo -e "${h}[+] ${p}Kata sandi: ${h}${kata_sandi}${r}"
+			echo ""
+			waktu_selesai_serangan
+			clean
+			home
+		else
+			echo ""
+			echo -e "${m}[-] ${p}Kata sandi file ${jenis_file} tidak ditemukan.${r}"
+			echo ""
+			waktu_selesai_serangan
+			clean
+			home
+		fi
+	else
+		echo ""
+		echo -e "${m}[-] ${p}Kata sandi file ${jenis_file} tidak ditemukan.${r}"
+		echo -e "${m}[-] ${p}File pot tidak ditemukan.${r}"
+		echo ""
+		waktu_selesai_serangan
+		clean
+		home
+	fi
+	# home
+}
+
+# Fungsin untuk mengcrack kata sandi file
+function crack_kata_sandi_file(){
+	input_file
+	ekstrak_hash_file
+	seting_teknik
+	run_john
+}
+
+# Fungsi utama (main)
+function main(){
+	clear
+	echo -e "${b}   d88b   d88b   d8b   db   d88b          d8b   db  d888b  ${r}"
+	echo -e "${b}    8P   8P  Y8  888o  88  8P  Y8         888o  88 88  Y8b ${r}"
+	echo -e "${b}    88  88    88 88V8o 88 88    88        88V8o 88 88      ${r}"
+	echo -e "${b}    88  88    88 88 V8o88 88    88 C8888D 88 V8o88 88  ooo ${r}"
+	echo -e "${b}db  88   8b  d8  88  V888  8b  d8         88  V888 88   8  ${r}"
+	echo -e "${b}Y8888P    Y88P   VP   V8P   Y88P          VP   V8P  Y888P  ${r}"
+	echo ""
+	echo -e "       ${m}Dibuat oleh: ${pembuat}${r}"
+	echo -e "       ${m}Versi: v${versi}${r}"
+	echo -e "       ${m}Github: ${github}${r}"
+	echo ""
+	echo -e "       ${h}[0] ${p}Keluar${r}"
+	echo -e "       ${h}[1] ${p}Crack kata sandi file ZIP${r}"
+	echo -e "       ${h}[2] ${p}Crack kata sandi file RAR${r}"
+	echo -e "       ${h}[3] ${p}Crack kata sandi file 7z${r}"
+	echo -e "       ${h}[4] ${p}Crack kata sandi file PDF${r}"
+	echo -e "       ${h}[5] ${p}Crack kata sandi file Office (.docx, .xlsx, .pptx)${r}"
+	echo -e "       ${h}[6] ${p}Crack kata sandi file LibreOffice (.odt, .ods, .odp)${r}"
+	echo -e "       ${h}[7] ${p}Tentang${r}"
+	echo ""
+	while true; do
+		read -p "${ib}[#] ${ip}Pilih menu (${ib}0-7${ip}): " pilih_menu
+		if [[ "${pilih_menu}" == "0" ]]; then
+			keluar
+			break
+		elif [[ "${pilih_menu}" == "1" ]]; then
+			crack_kata_sandi_file
+			break
+		elif [[ "${pilih_menu}" == "2" ]]; then
+			crack_kata_sandi_file
+			break
+		elif [[ "${pilih_menu}" == "3" ]]; then
+			crack_kata_sandi_file
+			break
+		elif [[ "${pilih_menu}" == "4" ]]; then
+			crack_kata_sandi_file
+			break
+		else
+			echo -e "${m}[-] ${p}Menu tidak tersedia. Silahkan pilih lagi.${r}"
+			continue
+		fi
+	done
+}
+
+main
