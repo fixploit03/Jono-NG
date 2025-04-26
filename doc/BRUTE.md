@@ -23,3 +23,5 @@ Untuk kata sandi alfanumerik 3 karakter: aaa, aab, aac, ..., ZZZ, 000, 001, ...,
 - Sangat memakan waktu untuk kata sandi panjang dan kompleks
 - Membutuhkan banyak sumber daya komputasi
 - Perlu waktu eksponensial seiring bertambahnya panjang kata sandi
+
+<p align="right">[ <a href="https://github.com/fixploit03/jono-ng">Kembali ke Beranda</a> ]</p>
