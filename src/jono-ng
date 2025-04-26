@@ -64,9 +64,6 @@ pembuat="Rofi (Fixploit03)"
 github="https://github.com/fixploit03/jono-ng"
 
 # Path tools John the Ripper (OK)
-#
-# - Harus diinstal dulu pake 'bash instal.sh' -
-#
 path="/opt/jono-ng/john/run"
 path_john="${path}/./john"
 path_zip2john="${path}/./zip2john"
