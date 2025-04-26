@@ -24,3 +24,5 @@ Dictionary Attack menggunakan daftar kata-kata umum, frasa, dan kata sandi popul
 
 - Tidak efektif terhadap kata sandi kompleks yang tidak menggunakan kata-kata umum
 - Keterbatasan pada ukuran dan kelengkapan kamus yang digunakan
+
+<p align="right">[ <a href="https://github.com/fixploit03/jono-ng">Kembali ke Beranda</a> ]</p>
