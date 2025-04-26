@@ -1,6 +1,6 @@
 # Mask Attack
 
-Mask attack adalah teknik yang menggunakan pola atau template untuk membatasi kemungkinan kombinasi dalam serangan brute force.
+Mask attack adalah teknik yang menggunakan pola atau template untuk membatasi kemungkinan kombinasi dalam serangan brute force. Mask Attack memiliki beberapa pola diantaranya: `?l` untuk huruf kecil (`a-z`), `?u` untuk huruf besar (`A-Z`), `?d` untuk angka (`0-9`), `?s` untuk simbol (`!-$`) dan `?a` untuk semua kombinasi terdiri dari (`huruf kecil, huruf besar, angka dan simbol`).
 
 ## Cara Kerja:
 
@@ -10,10 +10,10 @@ Mask attack adalah teknik yang menggunakan pola atau template untuk membatasi ke
 
 ## Contoh:
 
-- Mask "?u?l?l?l?d?d?d?d" mencari pola: 1 huruf besar, 3 huruf kecil, diikuti 4 angka
-  - Contoh hasil: "Abcd1234", "Zxyw9876"
-- Mask untuk format tanggal: "?d?d?d?d?d?d?d?d" (8 digit tanggal)
-  - Contoh hasil: "19901225", "20000101"
+- Mask `?u?l?l?l?d?d?d?d` mencari pola: 1 huruf besar, 3 huruf kecil, diikuti 4 angka
+  - Contoh hasil: `Abcd1234`, `Zxyw9876`
+- Mask untuk format tanggal: `?d?d?d?d?d?d?d?d` (`8 digit tanggal`)
+  - Contoh hasil: `19901225`, `20000101`
 
 ## Kelebihan:
 
@@ -25,3 +25,5 @@ Mask attack adalah teknik yang menggunakan pola atau template untuk membatasi ke
 
 - Membutuhkan pengetahuan atau dugaan tentang format kata sandi
 - Tidak efektif jika pola yang digunakan salah
+
+<p align="right">[ <a href="https://github.com/fixploit03/jono-ng">Kembali ke Beranda</a> ]</p>
