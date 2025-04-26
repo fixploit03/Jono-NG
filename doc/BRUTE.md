@@ -10,8 +10,8 @@ Brute Force Attack adalah teknik serangan dimana penyerang mencoba semua kombina
 
 ## Contoh:
 
-Jika kata sandi 4 digit numerik, algoritma mencoba: 0000, 0001, 0002, ..., 9999
-Untuk kata sandi alfanumerik 3 karakter: aaa, aab, aac, ..., ZZZ, 000, 001, ..., 999
+Jika kata sandi 4 digit numerik, algoritma mencoba: `0000`, `0001`, `0002`, ..., `9999`  
+Untuk kata sandi alfanumerik 3 karakter: `aaa`, `aab`, `aac`, ..., `ZZZ`, `000`, `001`, ..., `999`
 
 ## Kelebihan:
 
