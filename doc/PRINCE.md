@@ -4,14 +4,14 @@ Prince (PRobability INfinite Chained Elements) Attack adalah teknik password cra
 
 ## Cara Kerja:
 
-- Memecah kata-kata dari wordlist menjadi bagian-bagian (chunks)
+- Memecah kata-kata dari wordlist menjadi bagian-bagian (`chunks`)
 - Menggabungkan chunk dengan berbagai kemungkinan
 - Menggunakan probabilitas untuk menentukan kombinasi yang lebih mungkin digunakan
 
 ## Contoh:
 
-- Dari wordlist dasar: "rock", "star", "123"
-- Prince attack menghasilkan: "rock", "star", "123", "rockstar", "starrock", "rock123", "123rock", "star123", "123star", dll.
+- Dari wordlist dasar: `rock`, `star`, `123`
+- Prince attack menghasilkan: `rock`, `star`, `123`, `rockstar`, `starrock`, `rock123`, `123rock`, `star123`, `123star`, `dll`.
 
 ## Kelebihan:
 
@@ -24,3 +24,5 @@ Prince (PRobability INfinite Chained Elements) Attack adalah teknik password cra
 - Masih terbatas pada kombinasi dari kata yang tersedia
 - Dapat menghasilkan banyak kombinasi yang tidak masuk akal
 - Membutuhkan wordlist awal yang baik
+
+<p align="right">[ <a href="https://github.com/fixploit03/jono-ng">Kembali ke Beranda</a> ]</p>
