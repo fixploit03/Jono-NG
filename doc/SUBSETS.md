@@ -1,27 +1,35 @@
 # Subset Attack
 
-Subset Attack berfokus pada subset dari kemungkinan kombinasi berdasarkan pengetahuan atau asumsi tentang kata sandi target.
+Subset Attack adalah teknik serangan password cracking yang berfokus pada penggunaan subset karakter tertentu yang telah ditentukan oleh penyerang, membatasi ruang pencarian hanya pada karakter-karakter tertentu saja.
 
 ## Cara Kerja:
 
-- Mengidentifikasi subset spesifik dari kemungkinan kata sandi
-- Membatasi pencarian pada subset yang memiliki probabilitas tinggi
-- Sering menggunakan informasi tambahan tentang target
+Penyerang menentukan subset spesifik dari karakter yang ingin digunakan
+Serangan hanya mencoba kombinasi dari karakter dalam subset tersebut
+Mengabaikan semua karakter yang tidak termasuk dalam subset yang ditentukan
+Proses dilakukan secara sistematis mencoba semua kombinasi yang mungkin dari subset tersebut
 
 ## Contoh:
 
-- Jika diketahui kata sandi mengandung nama perusahaan, subset attack hanya fokus pada variasi nama tersebut
-- Jika target terkenal menggunakan nama hewan + tahun, subset attack akan berkonsentrasi pada kombinasi itu
-- Batasi serangan hanya pada karakter yang paling sering digunakan dalam bahasa tertentu
+- Subset `abc123`: Hanya mencoba kombinasi dari karakter `a`, `b`, `c`, `1`, `2`, dan `3`
+  - Contoh percobaan: `a`, `b`, `c`, `1`, `2`, `3`,`aa`, `ab`, `ac`, `a1`, `a2`, `a3`, `ba`, `bb`, `bc`, ...
+- Subset `0123456789`: Mencoba kombinasi yang hanya terdiri dari angka
+  - Cocok untuk memecahkan PIN atau kata sandi numerik
+- Subset `abcdefghij`: Mencoba kombinasi yang hanya menggunakan 10 huruf pertama alfabet
+  - Berguna jika ada informasi bahwa kata sandi dibatasi pada karakter tersebut
 
 ## Kelebihan:
 
-- Sangat efisien dengan fokus tepat pada subset yang berpotensi
-- Memanfaatkan informasi khusus tentang target
-- Dapat mengurangi waktu serangan secara dramatis
+- Mengurangi waktu serangan dengan mempersempit ruang pencarian
+- Sangat efisien jika diketahui karakter apa saja yang digunakan target
+- Mengoptimalkan penggunaan sumber daya komputasi
+- Memungkinkan penyesuaian berdasarkan informasi awal tentang karakter yang digunakan
 
 ## Kekurangan:
 
-- Sangat bergantung pada akurasi informasi tentang subset
-- Bisa melewatkan kata sandi jika asumsi subset salah
-- Membutuhkan penelitian awal tentang target
+- Tidak akan menemukan kata sandi jika mengandung karakter di luar subset
+- Membutuhkan pengetahuan atau asumsi awal tentang karakter dalam kata sandi
+- Kesalahan dalam pemilihan subset akan menyebabkan kegagalan serangan
+- Tidak efektif untuk kata sandi yang menggunakan karakter yang sangat bervariasi
+
+<p align="right">[ <a href="https://github.com/fixploit03/jono-ng">Kembali ke Beranda</a> ]</p>
