@@ -10,15 +10,15 @@ Dictionary Attack menggunakan daftar kata-kata umum, frasa, dan kata sandi popul
 
 ## Contoh:
 
-- Mencoba kata sandi seperti: "password", "123456", "qwerty", "admin"
-- Mencoba variasi seperti: "Password1", "password123", "p@ssw0rd"
-- Menggunakan kata-kata khusus konteks seperti nama perusahaan, nama tim olahraga
+- Mencoba kata sandi seperti: `password`, `123456`, `qwerty`, `admin`
+- Mencoba variasi seperti: `Password1`, `password123`, `p@ssw0rd`
+- Menggunakan kata-kata khusus konteks seperti `nama perusahaan`, `nama tim olahraga`
 
 ## Kelebihan:
 
 - Jauh lebih cepat daripada brute force murni
 - Sangat efektif karena banyak orang menggunakan kata sandi yang umum atau mudah diingat
-- Dapat disesuaikan berdasarkan informasi target (hobi, tanggal lahir, dll.)
+- Dapat disesuaikan berdasarkan informasi target (`hobi`, `tanggal lahir`, `dll.`)
 
 ## Kekurangan:
 
