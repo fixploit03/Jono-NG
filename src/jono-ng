@@ -44,7 +44,7 @@
 #
 #--------------------------------------------
 
-# Variabel warna
+# Variabel warna (OK)
 m="\e[1;31m"   # merah
 h="\e[1;32m"   # hijau
 k="\e[1;33m"   # kuning
@@ -56,12 +56,67 @@ ib=$'\e[1;34m' # input biru
 ip=$'\e[1;37m' # input kuning
 ir=$'\e[0m'    # input reset
 
-# Tentang script
+# Tentang script (OK)
 nama="jono-ng"
 deskripsi="Script Bash sederhana yang dirancang untuk meng-crack berbagai jenis file menggunakan John the Ripper (JtR)."
 versi="1.0"
 pembuat="Rofi (Fixploit03)"
 github="https://github.com/fixploit03/jono-ng"
+
+# Path tools John the Ripper (OK)
+#
+# - Harus diinstal dulu pake 'bash instal.sh' -
+#
+path="/opt/jono-ng/john/run"
+path_john="${path}/./john"
+path_zip2john="${path}/./zip2john"
+path_rar2john="${path}/./rar2john"
+path_7z2john="${path}/7z2john.pl"
+path_pdf2john="${path}/pdf2john.pl"
+path_office2john="${path}/office2john.py"
+
+# Error handling keyboardinterrupt (OK)
+trap 'echo -e "\n${m}[-] ${p}KeyboardInterrupt${r}"; clean; exit 1' SIGINT
+
+# Fungsi untuk mengecek root (OK)
+function cek_root(){
+	if [[ $EUID -ne 0 ]]; then
+		echo -e "${m}[-] ${p}Script ini harus dijalankan sebagai root.${r}"
+		exit 1
+	fi
+}
+
+# Fungsi peringatan (OK)
+function peringatan(){
+	echo -e "${m}==============================================================${r}"
+   	echo -e "${m}                          DISCLAIMER                          ${r}"
+	echo -e "${m}==============================================================${r}"
+        echo ""
+	echo -e "${m}Script ini dibuat semata-mata untuk tujuan edukasi dan pembelajaran.${r}"
+	echo -e "${m}Tidak ada niatan untuk mendorong atau melakukan tindakan yang melanggar hukum.${r}"
+	echo -e "${m}Segala bentuk penyalahgunaan script ini sepenuhnya menjadi tanggung jawab pengguna.${r}"
+	echo -e "${m}Pembuat script ini tidak bertanggung jawab atas kerugian, penyalahgunaan,${r}"
+	echo -e "${m}atau konsekuensi hukum yang timbul akibat penggunaan script ini.${r}"
+	echo ""
+	echo -e "${m}Gunakan dengan bijak dan penuh tanggung jawab.${r}"
+	echo ""
+	echo -e "                                             ${k}ROFI (FIXPLOIT03)${r}"
+	echo -e "${m}==============================================================${r}"
+	echo ""
+	while true; do
+		read -p "${ib}[#] ${ip}Apakah Anda ingin melanjutkannya? (iya/tidak): " nanya
+		if [[ "${nanya}" == "iya" ]]; then
+			:
+			break
+		elif [[ "${nanya}" == "tidak" ]]; then
+			echo -e "${b}[*] ${p}Terima kasih Anda telah memahami dan memilih untuk keluar.${r}"
+			exit 0
+		else
+			echo -e "${m}[-] ${p}Masukkan tidak valid. Harap masukkan 'iya/tidak'.${r}"
+			continue
+		fi
+	done
+}
 
 # Fungsi untuk keluar dari sript (OK)
 function keluar(){
@@ -112,7 +167,7 @@ function clean(){
 	fi
 }
 
-# Fungsi untuk input atau memasukkan file yang mau di-crack
+# Fungsi untuk input atau memasukkan file yang mau di-crack (OK)
 function input_file(){
 	# ZIP
 	if [[ "${pilih_menu}" == "1" ]]; then
@@ -185,13 +240,25 @@ function input_file(){
 	# Office (.docx, .xlsx, .pptx)
 	elif [[ "${pilih_menu}" == "5" ]]; then
 		jenis_file="Office"
-	# LibreOffice (.odt, .ods, .odp)
-	elif [[ "${pilih_menu}" == "2" ]]; then
-		jenis_file="LibreOffice"
+		ekstensi_office=("docx" "xlsx" "pptx")
+		# banner Office
+		clear
+		echo -e "${b}  d88b   d88888b d88888b d888888b   o88b  d88888b          o88b  d8888b    d8b     o88b  db   dD d88888b d8888b  ${r}"
+		echo -e "${b} 8P  Y8  88      88         88    d8P  Y8 88             d8P  Y8 88   8D d8   8b d8P  Y8 88  8P  88      88   8D ${r}"
+		echo -e "${b}88    88 88ooo   88ooo      88    8P      88ooooo        8P      88oobY  88ooo88 8P      88 8P   88ooooo 88oobY  ${r}"
+		echo -e "${b}88    88 88      88         88    8b      88      C8888D 8b      88 8b   88    88 8b     88 8b   88      88 8b   ${r}"
+		echo -e "${b} 8b  d8  88      88         88    Y8b  d8 88             Y8b  d8 88  88  88   88 Y8b  d8 88  88  88      88  88  ${r}"
+		echo -e "${b}  Y88P   YP      YP      Y888888P   Y88P  Y88888P          Y88P  88   YD YP   YP   Y88P  YP   YD Y88888P 88   YD ${r}"
+		echo ""
+		echo -e "       ${m}Dibuat oleh: ${pembuat}${r}"
+		echo -e "       ${m}Versi: v${versi}${r}"
+		echo -e "       ${m}Github: ${github}${r}"
+		echo ""
 	fi
 
 	while true; do
 		read -p "${ib}[#] ${ip}Masukkan nama file ${jenis_file}: " file
+		file=$(echo "${file}" | sed -e "s/^[ \t]*//" -e "s/[ \t]*$//" -e "s/^['\"]//" -e "s/['\"]$//")
 		if [[ -z "${file}" ]]; then
 			echo -e "${m}[-] ${p}Nama file ${jenis_file} tidak boleh kosong.${r}"
 			continue
@@ -200,6 +267,7 @@ function input_file(){
 			continue
 		else
 			ekstensi_file="${file##*.}"
+			# ZIP
 			if [[ "${jenis_file}" == "ZIP" ]]; then
 				if [[ "${ekstensi_file}" != "${ekstensi_zip}" ]]; then
 					echo -e "${m}[-] ${p}File bukan file ${jenis_file}.${r}"
@@ -208,6 +276,7 @@ function input_file(){
 					echo -e "${h}[+] ${p}File ${jenis_file} ditemukan.${r}"
 					break
 				fi
+			# RAR
 			elif [[ "${jenis_file}" == "RAR" ]]; then
 				if [[ "${ekstensi_file}" != "${ekstensi_rar}" ]]; then
 					echo -e "${m}[-] ${p}File bukan file ${jenis_file}.${r}"
@@ -216,6 +285,7 @@ function input_file(){
 					echo -e "${h}[+] ${p}File ${jenis_file} ditemukan.${r}"
 					break
 				fi
+			# 7z
 			elif [[ "${jenis_file}" == "7z" ]]; then
 				if [[ "${ekstensi_file}" != "${ekstensi_7z}" ]]; then
 					echo -e "${m}[-] ${p}File bukan file ${jenis_file}.${r}"
@@ -224,8 +294,26 @@ function input_file(){
 					echo -e "${h}[+] ${p}File ${jenis_file} ditemukan.${r}"
 					break
 				fi
+			# PDF
 			elif [[ "${jenis_file}" == "PDF" ]]; then
 				if [[ "${ekstensi_file}" != "${ekstensi_pdf}" ]]; then
+					echo -e "${m}[-] ${p}File bukan file ${jenis_file}.${r}"
+					continue
+				else
+					echo -e "${h}[+] ${p}File ${jenis_file} ditemukan.${r}"
+					break
+				fi
+			# Office (.docx, .xlsx, .pptx)
+			elif [[ "${jenis_file}" == "Office" ]]; then
+				valid=false
+				for ekstensi_of in "${ekstensi_office[@]}"; do
+					if [[ "${ekstensi_file}" == "${ekstensi_of}" ]]; then
+						valid=true
+						break
+					fi
+				done
+
+				if [[ "${valid}" == false ]]; then
 					echo -e "${m}[-] ${p}File bukan file ${jenis_file}.${r}"
 					continue
 				else
@@ -237,7 +325,7 @@ function input_file(){
 	done
 }
 
-# Fungsi untuk mengekstrak hash file
+# Fungsi untuk mengekstrak hash file (OK)
 function ekstrak_hash_file(){
 	echo -e "${b}[*] ${p}Mengekstrak hash file ${jenis_file}...${r}"
 
@@ -245,7 +333,7 @@ function ekstrak_hash_file(){
 
 	# ZIP
 	if [[ "${jenis_file}" == "ZIP" ]]; then
-		zip2john "${file}" 1> "${file_hash}" 2> "error.txt"
+		"${path_zip2john}" "${file}" 1> "${file_hash}" 2> "error.txt"
 		if [[ $? -ne 0 ]]; then
 			echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
 			clean
@@ -265,8 +353,9 @@ function ekstrak_hash_file(){
 				echo -e "${h}[+] ${p}Hash file ${jenis_file} berhasil diekstrak.${r}"
 			fi
 		fi
+	# RAR
 	elif [[ "${jenis_file}" == "RAR" ]]; then
-		rar2john "${file}" 1> "${file_hash}" 2> "error.txt"
+		"${path_rar2john}" "${file}" 1> "${file_hash}" 2> "error.txt"
 		if [[ $? -ne 0 ]]; then
 			echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
 			clean
@@ -286,8 +375,9 @@ function ekstrak_hash_file(){
 				echo -e "${h}[+] ${p}Hash file ${jenis_file} berhasil diekstrak.${r}"
 			fi
 		fi
+	# 7z
 	elif [[ "${jenis_file}" == "7z" ]]; then
-		7z2john "${file}" 1> "${file_hash}" 2> "error.txt"
+		"${path_7z2john}" "${file}" 1> "${file_hash}" 2> "error.txt"
 		if [[ $? -ne 0 ]]; then
 			echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
 			clean
@@ -307,8 +397,9 @@ function ekstrak_hash_file(){
 				echo -e "${h}[+] ${p}Hash file ${jenis_file} berhasil diekstrak.${r}"
 			fi
 		fi
+	# PDF
 	elif [[ "${jenis_file}" == "PDF" ]]; then
-		pdf2john "${file}" > "${file_hash}"
+		"${path_pdf2john}" "${file}" > "${file_hash}"
 		if [[ $? -ne 0 ]]; then
 			echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
 			clean
@@ -328,6 +419,28 @@ function ekstrak_hash_file(){
 				echo -e "${h}[+] ${p}Hash file ${jenis_file} berhasil diekstrak.${r}"
 			fi
 		fi
+	# Office (.docx, .xlsx, .pptx)
+	elif [[ "${jenis_file}" == "Office" ]]; then
+		"${path_office2john}" "${file}" 1> "${file_hash}" 2> "error.txt"
+		if [[ $? -ne 0 ]]; then
+			echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+			clean
+			home
+		else
+			if grep -qo "Invalid OLE file" "error.txt"; then
+				echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+				echo -e "${m}[-] ${p}File ${jenis_file} tidak valid atau rusak.${r}"
+				clean
+				home
+			elif grep -qo "file is unencrypted" "error.txt"; then
+				echo -e "${m}[-] ${p}Hash file ${jenis_file} gagal diekstrak.${r}"
+				echo -e "${m}[-] ${p}File ${jenis_file} tidak dienkripsi.${r}"
+				clean
+				home
+			else
+				echo -e "${h}[+] ${p}Hash file ${jenis_file} berhasil diekstrak.${r}"
+			fi
+		fi
 	fi
 }
 
@@ -335,6 +448,7 @@ function ekstrak_hash_file(){
 function seting_wordlist(){
 	while true; do
 		read -p "${ib}[#] ${ip}Masukkan nama file Wordlist: " file_wordlist
+		file_wordlist=$(echo "${file_wordlist}" | sed -e "s/^[ \t]*//" -e "s/[ \t]*$//" -e "s/^['\"]//" -e "s/['\"]$//")
 		if [[ -z "${file_wordlist}" ]]; then
 			echo -e "${m}[-] ${p}Nama file Wordlist tidak boleh kosong.${r}"
 			continue
@@ -385,7 +499,7 @@ function seting_panjang_kata_sandi(){
 	done
 }
 
-# Fungsi untuk menentukan pola mask yang ingin digunakan
+# Fungsi untuk menentukan pola mask yang ingin digunakan (OK)
 function seting_pola_mask(){
 	echo ""
 	echo -e "${m}Daftar pola Mask:${r}"
@@ -466,23 +580,30 @@ function seting_teknik(){
 	done
 }
 
-# Fungsin untuk mengcrack kata sandi file menggunakan JtR
+# Fungsi untuk mengcrack kata sandi file menggunakan JtR (OK)
 function run_john(){
 
 	file_pot="cracked.txt"
 
+	# ZIP
 	if [[ "${jenis_file}" == "ZIP" ]]; then
 		if grep -qo "pkzip" "${file_hash}"; then
 			format="PKZIP"
 		elif grep -qo "zip2" "${file_hash}"; then
 			format="ZIP"
 		fi
+	# RAR
 	elif [[ "${jenis_file}" == "RAR" ]]; then
 		format="RAR5"
+	# 7z
 	elif [[ "${jenis_file}" == "7z" ]]; then
 		format="7z"
+	# PDF
 	elif [[ "${jenis_file}" == "PDF" ]]; then
 		format="PDF"
+	# Office (.docx, .xlsx, .pptx)
+	elif [[ "${jenis_file}" == "Office" ]]; then
+		format="office"
 	fi
 
 	echo ""
@@ -490,8 +611,8 @@ function run_john(){
 
 	waktu_mulai_serangan
 
-	john ${teknik} --format="${format}" --pot="${file_pot}" "${file_hash}"
-	john --show --format="${format}" --pot="${file_pot}" "${file_hash}"
+	"${path_john}" ${teknik} --format="${format}" --pot="${file_pot}" --progress-every=1 --verbosity=6 "${file_hash}"
+	"${path_john}" --show --format="${format}" --pot="${file_pot}" "${file_hash}"
 
 	if [[ -f "${file_pot}" ]]; then
 		if grep -qo ":" "${file_pot}"; then
@@ -520,10 +641,9 @@ function run_john(){
 		clean
 		home
 	fi
-	# home
 }
 
-# Fungsin untuk mengcrack kata sandi file
+# Fungsin untuk mengcrack kata sandi file (OK)
 function crack_kata_sandi_file(){
 	input_file
 	ekstrak_hash_file
@@ -531,7 +651,7 @@ function crack_kata_sandi_file(){
 	run_john
 }
 
-# Fungsi utama (main)
+# Fungsi utama (main) (OK)
 function main(){
 	clear
 	echo -e "${b}   d88b   d88b   d8b   db   d88b          d8b   db  d888b  ${r}"
@@ -551,11 +671,10 @@ function main(){
 	echo -e "       ${h}[3] ${p}Crack kata sandi file 7z${r}"
 	echo -e "       ${h}[4] ${p}Crack kata sandi file PDF${r}"
 	echo -e "       ${h}[5] ${p}Crack kata sandi file Office (.docx, .xlsx, .pptx)${r}"
-	echo -e "       ${h}[6] ${p}Crack kata sandi file LibreOffice (.odt, .ods, .odp)${r}"
-	echo -e "       ${h}[7] ${p}Tentang${r}"
+	echo -e "       ${h}[6] ${p}Tentang${r}"
 	echo ""
 	while true; do
-		read -p "${ib}[#] ${ip}Pilih menu (${ib}0-7${ip}): " pilih_menu
+		read -p "${ib}[#] ${ip}Pilih menu (${ib}0-6${ip}): " pilih_menu
 		if [[ "${pilih_menu}" == "0" ]]; then
 			keluar
 			break
@@ -571,6 +690,12 @@ function main(){
 		elif [[ "${pilih_menu}" == "4" ]]; then
 			crack_kata_sandi_file
 			break
+		elif [[ "${pilih_menu}" == "5" ]]; then
+			crack_kata_sandi_file
+			break
+		elif [[ "${pilih_menu}" == "6" ]]; then
+			crack_kata_sandi_file
+			break
 		else
 			echo -e "${m}[-] ${p}Menu tidak tersedia. Silahkan pilih lagi.${r}"
 			continue
@@ -578,4 +703,8 @@ function main(){
 	done
 }
 
+# Manggil semua fungsi
+cek_root
+clear
+peringatan
 main
