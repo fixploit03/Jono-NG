@@ -1,6 +1,6 @@
 # Mask Attack
 
-Mask attack adalah teknik yang menggunakan pola atau template untuk membatasi kemungkinan kombinasi dalam serangan brute force. Mask Attack memiliki beberapa pola diantaranya: `?l` untuk huruf kecil (`a-z`), `?u` untuk huruf besar (`A-Z`), `?d` untuk angka (`0-9`), `?s` untuk simbol (`!-$`) dan `?a` untuk semua kombinasi terdiri dari (`huruf kecil, huruf besar, angka dan simbol`).
+Mask attack adalah teknik yang menggunakan pola atau template untuk membatasi kemungkinan kombinasi dalam serangan brute force. Mask Attack memiliki beberapa pola diantaranya: `?l` untuk huruf kecil (`a-z`), `?u` untuk huruf besar (`A-Z`), `?d` untuk angka (`0-9`), `?s` untuk simbol (`!-$`) dan `?a` untuk semua kombinasi terdiri dari (`huruf kecil`, `huruf besar`, `angka dan simbol`).
 
 ## Cara Kerja:
 
