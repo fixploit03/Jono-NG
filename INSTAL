@@ -1,3 +1,5 @@
+Berikut ini adalah langkah-langkah untuk menginstal jono-ng:
+
 1. Update repositori Linux
 $ sudo apt-get update
 
@@ -32,4 +34,6 @@ $ cd john/src
 $ sudo ./configure
 
 9. Membersihkan build sebelumnya dan membangun ulang
-$ sudo make -s clean && make -sj4
+$ sudo make -s clean && sudo make -sj$(nproc)
+
+# Selesai jono-ng siap digunakan!
