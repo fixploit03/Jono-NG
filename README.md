@@ -1,8 +1,13 @@
 # jono-ng
 
-jono-ng adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (JtR) dalam cracking kata sandi file terenkripsi seperti ZIP, RAR, 7z, PDF, dan dokumen Microsoft Office (.docx, .xlsx, .pptx). script ini menyediakan antarmuka berbasis teks yang interaktif dan ramah pengguna, mengotomatiskan proses ekstraksi hash dan cracking dengan berbagai teknik seperti Dictionary Attack, Brute Force, Mask Attack, Prince Attack, dan Subsets Attack. Dibuat untuk tujuan edukasi dan pembelajaran keamanan siber, script ini menekankan penggunaan yang etis, legal, dan bertanggung jawab, hanya pada file yang dimiliki pengguna.
+[![Platform](https://img.shields.io/badge/Platform-Linux-yellow?logo=linux)](https://www.linux.org/)
+[![Bahasa](https://img.shields.io/badge/Bahasa-Bash-green?logo=gnu-bash)](https://www.gnu.org/software/bash/)
+[![Ditenagai oleh](https://img.shields.io/badge/Ditenagai_oleh-John_the_Ripper-red?logo=lock)](https://github.com/openwall/john)
+[![Lisensi](https://img.shields.io/badge/Lisensi-MIT-green?logo=open-source-initiative)](https://github.com/fixploit03/jono-ng/blob/main/LICENSE)
 
-> ⚠️ DISCLAIMER: Script ini hanya untuk tujuan edukasi. Penggunaan untuk aktivitas ilegal atau tanpa izin adalah melanggar hukum. Pembuat tidak bertanggung jawab atas penyalahgunaan script ini. Gunakan dengan bijak dan hanya pada file yang Anda miliki.
+`jono-ng` adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (JtR) dalam cracking kata sandi file terenkripsi seperti ZIP, RAR, 7z, PDF, dan dokumen Microsoft Office (.docx, .xlsx, .pptx). script ini menyediakan antarmuka berbasis teks yang interaktif dan ramah pengguna, mengotomatiskan proses ekstraksi hash dan cracking dengan berbagai teknik seperti Dictionary Attack, Brute Force, Mask Attack, Prince Attack, dan Subsets Attack. Dibuat untuk tujuan edukasi dan pembelajaran keamanan siber, script ini menekankan penggunaan yang etis, legal, dan bertanggung jawab, hanya pada file yang dimiliki pengguna.
+
+> ⚠️ **DISCLAIMER**: Script ini hanya untuk tujuan edukasi. Penggunaan untuk aktivitas ilegal atau tanpa izin adalah melanggar hukum. Pembuat tidak bertanggung jawab atas penyalahgunaan script ini. Gunakan dengan bijak dan hanya pada file yang Anda miliki.
 
 ## Fitur
 
@@ -41,7 +46,7 @@ Pemberitahuan hak cipta dan lisensi ini disertakan dalam semua salinan atau bagi
 
 Script diberikan "sebagaimana adanya", tanpa jaminan apa pun, termasuk jaminan kelayakan untuk diperjualbelikan, kesesuaian untuk tujuan tertentu, atau bebas dari pelanggaran.
 
-Lihat [LICENSE]() untuk detail lengkap.
+Lihat [LICENSE](https://github.com/fixploit03/jono-ng/blob/main/LICENSE) untuk detail lengkap.
 
 
 
@@ -50,16 +55,16 @@ Lihat [LICENSE]() untuk detail lengkap.
 
 Untuk pertanyaan, saran, atau laporan bug:
 
-- Pembuat: Rofi (Fixploit03)
-- GitHub: fixploit03
-- Email: fixploit03@gmail.com
+- **Pembuat**: Rofi (Fixploit03)
+- **GitHub**: fixploit03
+- **Email**: fixploit03@gmail.com
 
-Silakan buka Issue untuk melaporkan masalah atau mengusulkan fitur baru.
+Silakan buka [Issue](https://github.com/fixploit03/jono-ng/issues) untuk melaporkan masalah atau mengusulkan fitur baru.
 
 ## Ucapan Terima Kasih
 
-- John the Ripper Team: Untuk alat cracking kata sandi yang luar biasa.
-- Komunitas Open-Source: Untuk inspirasi dan dukungan.
-- Pengguna: Untuk mencoba dan memberikan masukan pada jono-ng.
+- **John the Ripper Team**: Untuk alat cracking kata sandi yang luar biasa.
+- **Komunitas Open-Source**: Untuk inspirasi dan dukungan.
+- **Pengguna**: Untuk mencoba dan memberikan masukan pada jono-ng.
 
-> Catatan: Script ini adalah proyek edukasi. Hargai privasi dan hak orang lain. Mari bersama-sama membangun komunitas keamanan siber yang bertanggung jawab!
+> **Catatan**: Script ini adalah proyek edukasi. Hargai privasi dan hak orang lain. Mari bersama-sama membangun komunitas keamanan siber yang bertanggung jawab!
