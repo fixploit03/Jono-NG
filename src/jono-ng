@@ -1,7 +1,9 @@
 #!/bin/bash
 #--------------------------------------------
 #..............: jono-ng
-#..............: Script Bash sederhana yang dirancang untuk meng-crack berbagai jenis file menggunakan John the Ripper (JtR).
+#..............: jono-ng adalah script Bash open-source yang dirancang untuk mempermudah
+#                penggunaan John the Ripper (JtR) dalam cracking kata sandi file terenkripsi
+#                seperti ZIP, RAR, 7z, PDF, dan dokumen Microsoft Office (.docx, .xlsx, .pptx).
 #..............: v1.0
 #..............: Rofi (Fixploit03)
 #..............: https://github.com/fixploit03/jono-ng
@@ -60,7 +62,7 @@ ir=$'\e[0m'    # input reset
 # Tentang script (OK)
 #
 nama="jono-ng"
-deskripsi="Script Bash sederhana yang dirancang untuk meng-crack berbagai jenis file menggunakan John the Ripper (JtR)."
+deskripsi="jono-ng adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (JtR) dalam cracking kata sandi file terenkripsi seperti ZIP, RAR, 7z, PDF, dan dokumen Microsoft Office (.docx, .xlsx, .pptx)."
 versi="1.0"
 pembuat="Rofi (Fixploit03)"
 github="https://github.com/fixploit03/jono-ng"
