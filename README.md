@@ -30,6 +30,10 @@
 - **Warna Teks**:  
    Menggunakan kode ANSI untuk membedakan informasi, error, dan input pengguna.
 
+## Instal 🔧
+
+Cara menginstal jono-ng dapat dilihat di sini: [https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL](https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL)
+
 ## Lisensi 📜
 
 **Hak Cipta © 2025 Rofi (Fixploit03)**
