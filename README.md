@@ -1,11 +1,11 @@
-# jono-ng
+# 🎩 jono-ng
 
 [![Platform](https://img.shields.io/badge/Platform-Linux-yellow?logo=linux)](https://www.linux.org/)
 [![Bahasa](https://img.shields.io/badge/Bahasa-Bash-green?logo=gnu-bash)](https://www.gnu.org/software/bash/)
 [![Ditenagai oleh](https://img.shields.io/badge/Ditenagai_oleh-John_the_Ripper-red?logo=lock)](https://github.com/openwall/john)
 [![Lisensi](https://img.shields.io/badge/Lisensi-MIT-green?logo=open-source-initiative)](https://github.com/fixploit03/jono-ng/blob/main/LICENSE)
 
-`jono-ng` adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (JtR) dalam cracking kata sandi file terenkripsi seperti ZIP, RAR, 7z, PDF, dan dokumen Microsoft Office (.docx, .xlsx, .pptx). script ini menyediakan antarmuka berbasis teks yang interaktif dan ramah pengguna, mengotomatiskan proses ekstraksi hash dan cracking dengan berbagai teknik seperti Dictionary Attack, Brute Force, Mask Attack, Prince Attack, dan Subsets Attack. Dibuat untuk tujuan edukasi dan pembelajaran keamanan siber, script ini menekankan penggunaan yang etis, legal, dan bertanggung jawab, hanya pada file yang dimiliki pengguna.
+**`jono-ng` adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (`JtR`) dalam cracking kata sandi file terenkripsi seperti `ZIP`, `RAR`, `7z`, `PDF`, dan `dokumen Microsoft Office` (`.docx`, `.xlsx`, `.pptx`).** script ini menyediakan antarmuka berbasis teks yang interaktif dan ramah pengguna, mengotomatiskan proses ekstraksi hash dan cracking dengan berbagai teknik seperti `Dictionary Attack`, `Brute Force`, `Mask Attack`, `Prince Attack`, dan `Subsets Attack`. Dibuat untuk tujuan edukasi dan pembelajaran keamanan siber, script ini menekankan penggunaan yang etis, legal, dan bertanggung jawab, hanya pada file yang dimiliki pengguna.
 
 > ⚠️ **DISCLAIMER**: Script ini hanya untuk tujuan edukasi. Penggunaan untuk aktivitas ilegal atau tanpa izin adalah melanggar hukum. Pembuat tidak bertanggung jawab atas penyalahgunaan script ini. Gunakan dengan bijak dan hanya pada file yang Anda miliki.
 
