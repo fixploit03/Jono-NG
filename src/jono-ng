@@ -104,7 +104,7 @@ function peringatan(){
 	echo ""
 	echo -e "${p}Gunakan dengan bijak dan penuh tanggung jawab.${r}"
 	echo ""
-	echo -e "                                                                           ${k}ROFI (FIXPLOIT03)${r}"
+	echo -e "                                                                           ${k}${pembuat}${r}"
 	echo -e "${m}============================================================================================${r}"
 	echo ""
 	while true; do
