@@ -36,6 +36,10 @@
 
 Cara menginstal jono-ng dapat dilihat di sini: [https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL](https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL)
 
+## Screenshot 📸
+
+![](https://github.com/fixploit03/jono-ng/blob/main/img/Screenshot%20jono-ng.png)
+
 ## Lisensi 📜
 
 **Hak Cipta © 2025 Rofi (Fixploit03)**
