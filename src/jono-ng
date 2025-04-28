@@ -89,6 +89,56 @@ function cek_root(){
 	fi
 }
 
+# Fungsi untuk mengecek alat-alat yang dibutuhkan oleh jono-ng (OK)
+function cek_tools(){
+
+	# Lokasi folder tools tambahan
+	folder_tools="${path}"
+
+	# Daftar tools yang dibutuhkan
+	daftar_tools=(
+	    "python3"
+	    "perl"
+	    "john"
+	    "zip2john"
+	    "rar2john"
+	    "7z2john"
+	    "pdf2john"
+	    "office2john"
+	)
+
+	echo -e "${b}[*] ${p}Mengecek alat-alat yang dibutuhkan....${r}"
+	sleep 3
+	echo ""
+
+	# Flag untuk memeriksa apakah semua alat tersedia
+	semua_ada=true
+
+	# Periksa setiap alat
+	for alat in "${daftar_tools[@]}"; do
+		sleep 1
+		if command -v "${alat}" &>/dev/null; then
+        		echo -e "${h}[OK] ${p}${alat} -> ${h}Sudah terinstal${r}"
+    		elif [[ -x "${folder_tools}/${alat}" || -x "${folder_tools}/${alat}.pl" || -x "${folder_tools}/${alat}.exe" || -x "${folder_tools}/${alat}.py" ]]; then
+        		echo -e "${h}[OK] ${p}${alat} -> ${h}Sudah terinstal${r}"
+    		else
+        		echo -e "${m}[ERROR] ${p}${alat} -> ${m}Belum terinstal${r}"
+        		semua_ada=false
+    		fi
+	done
+
+	# Cek hasil akhir
+	if [ "${semua_ada}" = false ]; then
+		echo ""
+    		echo -e "${m}[-] ${p}Script tidak dapat dijalankan karena ada alat yang belum terinstal.${r}"
+    		exit 1
+	else
+		echo ""
+    		echo -e "${h}[+] ${p}Semua alat yang dibutuhkan sudah terinstal! Script dapat dilanjutkan...${r}"
+		melanjutkan
+	fi
+}
+
 # Fungsi peringatan (OK)
 #
 function peringatan(){
@@ -128,6 +178,13 @@ function keluar(){
 	echo ""
 	echo -e "${p}Bye... ${m};)${r}"
 	exit 0
+}
+
+# Fungsi untuk melanjutkan ke script (OK)
+function melanjutkan(){
+	echo ""
+	read -r -p "${ip}Tekan [${ij}Enter${ip}] untuk melanjutkan...${ir}"
+	main
 }
 
 # Fungsi untuk kembali ke menu utama (OK)
@@ -745,4 +802,5 @@ function main(){
 cek_root
 clear
 peringatan
+cek_tools
 main
