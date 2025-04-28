@@ -52,6 +52,30 @@ jono-ng</h1>
 - **Warna Teks**:  
    Menggunakan kode ANSI untuk membedakan informasi, error, dan input pengguna.
 
+## Persyaratan
+
+### Persyaratan Sistem:
+
+1. **Sistem Operasi Linux (`Debian`/`Ubuntu`)**
+2. **Akses Root**: Script harus dijalankan dengan hak akses root
+
+### Dependensi Perangkat Lunak:
+
+1. **John the Ripper**: Alat utama pembobol kata sandi
+2. **Python3**: Dibutuhkan untuk menjalankan script seperti `office2john.py`
+3. **Perl**: Dibutuhkan untuk menjalankan script seperti `7z2john.pl` dan `pdf2john.pl`
+
+### Komponen John the Ripper:
+
+Script mengharapkan alat-alat John the Ripper berikut tersedia:
+
+1. **john** - Pembobol kata sandi utama
+2. **zip2john** - Untuk mengekstrak hash dari file ZIP
+3. **rar2john** - Untuk mengekstrak hash dari file RAR
+4. **7z2john.pl** - Untuk mengekstrak hash dari file 7z
+5. **pdf2john.pl** - Untuk mengekstrak hash dari file PDF
+6. **office2john.py** - Untuk mengekstrak hash dari file Office (`.docx`, `.xlsx`, `.pptx`)
+
 ## Instal 🔧
 
 Cara menginstal jono-ng dapat dilihat di sini: [https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL](https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL)
