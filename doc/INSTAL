@@ -1,19 +1,19 @@
-Berikut ini adalah langkah-langkah untuk menginstal jono-ng:
+Berikut ini adalah langkah-langkah untuk menginstal Jono-NG:
 
 1. Update repositori Linux
 $ sudo apt-get update
 
-2. Instal dpendensi yang dibutuhkan oleh jono-ng
+2. Instal dpendensi yang dibutuhkan oleh Jono-NG
 $ sudo apt-get install git python3 perl build-essential libssl-dev zlib1g-dev yasm pkg-config libgmp-dev libpcap-dev libbz2-dev libcompress-raw-lzma-perl
 
 3. Pindah ke direktori /opt
 $ cd /opt
 
 4. Kloning repositori jono-ng dari Github
-$ sudo git clone https://github.com/fixploit03/jono-ng.git
+$ sudo git clone https://github.com/fixploit03/Jono-NG.git
 
-5. Pindah ke direktori src dari jono-ng
-$ cd jono-ng/src
+5. Pindah ke direktori src dari Jono-NG
+$ cd Jono-NG/src
 
 6. Beri izin eksekusi pada script
 $ sudo chmod +x jono-ng
@@ -36,4 +36,4 @@ $ sudo ./configure
 9. Membersihkan build sebelumnya dan membangun ulang
 $ sudo make -s clean && sudo make -sj$(nproc)
 
-# Selesai jono-ng siap digunakan!
+# Selesai Jono-NG siap digunakan!
