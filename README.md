@@ -11,7 +11,7 @@ Jono-NG</h1>
 <p align="center">
   <a href="https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL">Instalasi</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="">Demonstrasi</a>
+  <a href="https://youtu.be/r-zpLuvNEks?si=16H5IQCfyN8FLNAP">Demonstrasi</a>
   &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="https://github.com/fixploit03/jono-ng/blob/main/LICENSE">Lisensi</a>
 </p>
@@ -50,6 +50,8 @@ Jono-NG</h1>
   Memberikan pesan kesalahan yang informatif ketika terjadi masalah. tidak terenkripsi.
 - **Dapat Disesuaikan**:  
    Memungkinkan pengguna untuk menentukan `wordlist`, `panjang kata sandi`, `pola mask`, dan `set karakter`.
+- **Penyimpanan Hasil**:  
+  Menyimpan informasi file yang berhasil di-crack dalam format CSV.
 
 ## Persyaratan 📝
 
