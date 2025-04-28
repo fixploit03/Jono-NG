@@ -17,11 +17,23 @@ Jono-NG</h1>
 </p>
 
 <div align="center">
-    <img src="https://img.shields.io/badge/Platform-Linux-yellow?logo=linux&style=flat-square" alt="Platform">
-    <img src="https://img.shields.io/badge/Bahasa-Bash-green?logo=gnu-bash&style=flat-square" alt="Bahasa">  
-    <img src="https://img.shields.io/badge/Lisensi-MIT-green?logo=open-source-initiative&style=flat-square" alt="Lisensi">
-    <br>
-    <img src="https://img.shields.io/badge/Ditenagai_oleh-John_the_Ripper-red?logo=lock&style=flat-square" alt="Ditenagai oleh">
+  <a href="https://www.kernel.org/" target="_blank">
+      <img src="https://img.shields.io/badge/Platform-Linux-yellow?logo=linux&style=flat-square" alt="Platform">
+  </a>
+  <a href="https://www.gnu.org/software/bash/" target="_blank">
+      <img src="https://img.shields.io/badge/Bahasa-Bash-green?logo=gnu-bash&style=flat-square" alt="Bahasa">
+  </a>
+  <a href="https://github.com/fixploit03/jono-ng/blob/main/LICENSE" target="_blank">
+      <img src="https://img.shields.io/badge/Lisensi-MIT-green?logo=open-source-initiative&style=flat-square" alt="Lisensi">
+  </a>
+  <br>
+  <a href="https://www.openwall.com/john/" target="_blank">
+      <img src="https://img.shields.io/badge/Ditenagai_oleh-John_the_Ripper-red?logo=lock&style=flat-square" alt="Ditenagai oleh">
+  </a>
+  <br>
+  <a href="https://github.com/fixploit03/Jono-NG/releases" target="_blank">
+    <img src="https://img.shields.io/github/v/release/fixploit03/Jono-NG?logo=github&style=flat-square" alt="Versi">
+  </a>
 </div>
 <br>
 
