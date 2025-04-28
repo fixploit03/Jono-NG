@@ -1,9 +1,7 @@
 #!/bin/bash
 #--------------------------------------------
 #..............: Jono-NG
-#..............: Jono-NG adalah script Bash open-source yang dirancang untuk mempermudah
-#                penggunaan John the Ripper (JtR) dalam cracking kata sandi file terenkripsi
-#                seperti ZIP, RAR, 7z, PDF, dan dokumen Microsoft Office (.docx, .xlsx, .pptx).
+#..............: Crack Kata Sandi File Terenkripsi dengan John the Ripper
 #..............: v1.0
 #..............: Rofi (Fixploit03)
 #..............: https://github.com/fixploit03/Jono-NG
