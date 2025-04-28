@@ -1,12 +1,12 @@
 #!/bin/bash
 #--------------------------------------------
-#..............: jono-ng
-#..............: jono-ng adalah script Bash open-source yang dirancang untuk mempermudah
+#..............: Jono-NG
+#..............: Jono-NG adalah script Bash open-source yang dirancang untuk mempermudah
 #                penggunaan John the Ripper (JtR) dalam cracking kata sandi file terenkripsi
 #                seperti ZIP, RAR, 7z, PDF, dan dokumen Microsoft Office (.docx, .xlsx, .pptx).
 #..............: v1.0
 #..............: Rofi (Fixploit03)
-#..............: https://github.com/fixploit03/jono-ng
+#..............: https://github.com/fixploit03/Jono-NG
 #
 #---------------- DISCLAIMER ----------------
 #
@@ -61,15 +61,15 @@ ir=$'\e[0m'    # input reset
 
 # Tentang script (OK)
 #
-nama="jono-ng"
-deskripsi="jono-ng adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (JtR) dalam cracking kata sandi file terenkripsi seperti ZIP, RAR, 7z, PDF, dan dokumen Microsoft Office (.docx, .xlsx, .pptx)."
+nama="Jono-NG"
+deskripsi="Jono-NG adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (JtR) dalam cracking kata sandi file terenkripsi seperti ZIP, RAR, 7z, PDF, dan dokumen Microsoft Office (.docx, .xlsx, .pptx)."
 versi="1.0"
 pembuat="Rofi (Fixploit03)"
-github="https://github.com/fixploit03/jono-ng"
+github="https://github.com/fixploit03/Jono-NG"
 
 # Path tools John the Ripper (OK)
 #
-path="/opt/jono-ng/john/run"
+path="/opt/Jono-NG/john/run"
 path_john="${path}/./john"
 path_zip2john="${path}/./zip2john"
 path_rar2john="${path}/./rar2john"
@@ -89,7 +89,7 @@ function cek_root(){
 	fi
 }
 
-# Fungsi untuk mengecek alat-alat yang dibutuhkan oleh jono-ng (OK)
+# Fungsi untuk mengecek alat-alat yang dibutuhkan oleh Jono-NG (OK)
 function cek_tools(){
 
 	# Lokasi folder tools tambahan
@@ -723,15 +723,15 @@ function crack_kata_sandi_file(){
 	run_john
 }
 
-# Fungsi untuk menampilkan tentang jono-ng (OK)
+# Fungsi untuk menampilkan tentang Jono-NG (OK)
 #
 function tentang(){
 	clear
 	echo -e "${b}=========================================================================================================${r}"
-	echo -e "${b}                                            ${p}TENTANG jono-ng                                          ${r}"
+	echo -e "${b}                                            ${p}TENTANG Jono-NG                                          ${r}"
 	echo -e "${b}=========================================================================================================${r}"
 	echo ""
-	echo -e "${p}jono-ng adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (JtR)${r}"
+	echo -e "${p}Jono-NG adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (JtR)${r}"
 	echo -e "${p}dalam cracking kata sandi file terenkripsi seperti ZIP, RAR, 7z, PDF, dan dokumen Microsoft Office${r}"
 	echo -e "${p}(.docx, .xlsx, .pptx). script ini menyediakan antarmuka berbasis teks yang interaktif dan ramah pengguna,${r}"
 	echo -e "${p}mengotomatiskan proses ekstraksi hash dan cracking dengan berbagai teknik seperti Dictionary Attack,${r}"
