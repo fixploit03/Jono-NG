@@ -649,6 +649,26 @@ function seting_teknik(){
 	done
 }
 
+# Fungsi untuk menyimpan hasil file yang berhasil dicrack (OK)
+function simpan_hasil_file_yang_berhasil_dicrack(){
+	real_path_file=$(realpath "${file}")
+
+	if [[ "${real_path_file}" == *" "* ]]; then
+                real_path_file="'${real_path_file}'"
+        fi
+
+	file_tampung="/opt/${nama}/cracked.csv"
+
+	if [[ ! -f "${file_tampung}" ]]; then
+		touch "${file_tampung}"
+		echo "Jenis File, Nama File, Kata Sandi" > "${file_tampung}"
+	fi
+
+	if ! grep -wq "${real_path_file}" "${file_tampung}" || ! grep -wq "${kata_sandi}" "${file_tampung}"; then
+		echo "${jenis_file}, ${real_path_file}, ${kata_sandi}" >> "${file_tampung}"
+	fi
+}
+
 # Fungsi untuk mengcrack kata sandi file menggunakan JtR (OK)
 #
 function run_john(){
@@ -688,6 +708,7 @@ function run_john(){
 		if grep -qo ":" "${file_pot}"; then
 			# kata_sandi=$(cat "${file_pot}" | cut -d ':' -f 2)
 			kata_sandi=$(cut -d ':' -f 2 "${file_pot}")
+			simpan_hasil_file_yang_berhasil_dicrack
 			echo ""
 			echo -e "${h}[+] ${p}Kata sandi file ${jenis_file} ditemukan.${r}"
 			echo -e "${h}[+] ${p}Kata sandi: ${h}${kata_sandi}${r}"
