@@ -38,11 +38,11 @@ jono-ng</h1>
 - **Dukungan Beragam File**:  
   Mendukung cracking kata sandi untuk file `ZIP`, `RAR`, `7z`, `PDF`, dan `dokumen Office` (`.docx`, `.xlsx`, `.pptx`).
 - **Berbagai Teknik Cracking**:  
-  - [Dictionary Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/DICT.md) (`menggunakan wordlist`).
-  - [Brute Force Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/BRUTE.md) (`mencoba semua kombinasi karakter`).
-  - [Mask Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/MASK.md) (`menggunakan pola mask seperti huruf`, `angka`, atau `simbol`).
-  - [Prince Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/PRINCE.md) (`kombinasi kata dari wordlist`).
-  - [Subsets Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/SUBSETS.md) (`kombinasi karakter tertentu`).
+  - [Dictionary Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/DICT.md) (menggunakan wordlist).
+  - [Brute Force Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/BRUTE.md) (mencoba semua kombinasi karakter).
+  - [Mask Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/MASK.md) (menggunakan pola mask seperti `huruf kecil ?l`, `huruf besar ?u`. `angka ?d`, `simbol ?s` dan kombinasi semuanya `huruf kecil, huruf besar, angka dan simbil ?a`).
+  - [Prince Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/PRINCE.md) (kombinasi kata dari wordlist).
+  - [Subsets Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/SUBSETS.md) (kombinasi karakter tertentu).
 - **Validasi Input**:  
    Memeriksa keberadaan dan keabsahan file target serta wordlist.
 - **Manajemen Proses**:  
@@ -51,38 +51,36 @@ jono-ng</h1>
   - Penanganan error seperti file rusak atau tidak terenkripsi.
 - **Warna Teks**:  
    Menggunakan kode ANSI untuk membedakan informasi, error, dan input pengguna.
+- **Dapat Disesuaikan**:  
+   Memungkinkan pengguna untuk menentukan wordlist, panjang kata sandi, pola mask, dan set karakter.
 
-## Persyaratan
+## Persyaratan 📝
 
-### Persyaratan Sistem:
+Untuk menjalankan jono-ng, alat dan dependensi berikut harus terinstal:
 
-1. **Sistem Operasi Linux (`Debian`/`Ubuntu`)**
-2. **Akses Root**: Script harus dijalankan dengan hak akses root
+- **John the Ripper (`JtR`) suite**, termasuk:
+  - **john** (alat cracking utama)
+  - **zip2john** (Untuk mengekstrak hash dari file ZIP)
+  - **rar2john** (Untuk mengekstrak hash dari file RAR)
+  - **7z2john.pl** (Untuk mengekstrak hash dari file 7z)
+  - **pdf2john.py** (Untuk mengekstrak hash dari file PDF)
+  - **office2john.py** (Untuk mengekstrak hash dari file Office (`.docx`, `.xlsx`, `.pptx`))
+- **Python 3** (Dibutuhkan untuk menjalankan script seperti `office2john.py`)
+- **Perl** (Dibutuhkan untuk menjalankan script seperti `7z2john.pl` dan `pdf2john.pl`)
+- **Bash** (Dibutuhkan untuk menjalankan script jono-ng)
+- **Sistem operasi berbasis Linux** (misalnya, `Ubuntu`, `Kali Linux`, `Debian`).
 
-### Dependensi Perangkat Lunak:
+Opsional
 
-1. **John the Ripper**: Alat utama pembobol kata sandi
-2. **Python3**: Dibutuhkan untuk menjalankan script seperti `office2john.py`
-3. **Perl**: Dibutuhkan untuk menjalankan script seperti `7z2john.pl` dan `pdf2john.pl`
-
-### Komponen John the Ripper:
-
-Script mengharapkan alat-alat John the Ripper berikut tersedia:
-
-1. **john** - Pembobol kata sandi utama
-2. **zip2john** - Untuk mengekstrak hash dari file ZIP
-3. **rar2john** - Untuk mengekstrak hash dari file RAR
-4. **7z2john.pl** - Untuk mengekstrak hash dari file 7z
-5. **pdf2john.pl** - Untuk mengekstrak hash dari file PDF
-6. **office2john.py** - Untuk mengekstrak hash dari file Office (`.docx`, `.xlsx`, `.pptx`)
+- **File wordlist** (misalnya, `rockyou.txt`) untuk serangan `Dictionary Attack` dan `Prince Attack`.
 
 ## Instal 🔧
 
 Cara menginstal jono-ng dapat dilihat di sini: [https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL](https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL)
 
-## Screenshot 📸
+## Demonstrasi 📽️
 
-
+Video demonstrasi jono-ng dapat Anda lihat di YouTube melalui tautan berikut: [Segera]()
 
 ## Lisensi 📜
 
