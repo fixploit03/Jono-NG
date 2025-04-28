@@ -39,7 +39,7 @@ Jono-NG</h1>
 
 ![](https://github.com/fixploit03/jono-ng/blob/main/img/Screenshot%20jono-ng.png)
 
-`Jono-NG` adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (`JtR`) dalam cracking kata sandi file terenkripsi seperti `ZIP`, `RAR`, `7z`, `PDF`, dan `dokumen Microsoft Office` (`.docx`, `.xlsx`, `.pptx`).
+`Jono-NG` adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (`JtR`) dalam cracking kata sandi file terenkripsi seperti `ZIP`, `RAR`, `7z`, `PDF`, dan `Microsoft Office` (`.docx`, `.xlsx`, `.pptx`).
 
 > ⚠️ **DISCLAIMER**: Script ini hanya untuk tujuan edukasi. Penggunaan untuk aktivitas ilegal atau tanpa izin adalah melanggar hukum. Pembuat tidak bertanggung jawab atas penyalahgunaan script ini. Gunakan dengan bijak dan hanya pada file yang Anda miliki.
 
@@ -50,8 +50,8 @@ Jono-NG</h1>
   - File ZIP (`.zip`)
   - File RAR (`.rar`)
   - File 7z (`.7z`)
-  - Dokumen PDF (`.pdf`)
-  - Dokumen Microsoft Office (`.docx`, `.xlsx`, `.pptx`)
+  - File PDF (`.pdf`)
+  - File Microsoft Office (`.docx`, `.xlsx`, `.pptx`)
 - **Beragam Teknik Cracking Kata Sandi**:  
   - [Dictionary Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/DICT.md)
   - [Brute Force Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/BRUTE.md)
