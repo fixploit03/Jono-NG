@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <img src="https://github.com/fixploit03/jono-ng/blob/main/img/icon.png" width=175 height=175/><br>
-jono-ng</h1>
+Jono-NG</h1>
 
 <p align="center">
   <span>Crack Kata Sandi File Terenkripsi dengan <a href="https://github.com/openwall/john">John the Ripper</a></span>
@@ -27,7 +27,7 @@ jono-ng</h1>
 
 ![](https://github.com/fixploit03/jono-ng/blob/main/img/Screenshot%20jono-ng.png)
 
-`jono-ng` adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (`JtR`) dalam cracking kata sandi file terenkripsi seperti `ZIP`, `RAR`, `7z`, `PDF`, dan `dokumen Microsoft Office` (`.docx`, `.xlsx`, `.pptx`).
+`Jono-NG` adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (`JtR`) dalam cracking kata sandi file terenkripsi seperti `ZIP`, `RAR`, `7z`, `PDF`, dan `dokumen Microsoft Office` (`.docx`, `.xlsx`, `.pptx`).
 
 > ⚠️ **DISCLAIMER**: Script ini hanya untuk tujuan edukasi. Penggunaan untuk aktivitas ilegal atau tanpa izin adalah melanggar hukum. Pembuat tidak bertanggung jawab atas penyalahgunaan script ini. Gunakan dengan bijak dan hanya pada file yang Anda miliki.
 
@@ -53,7 +53,7 @@ jono-ng</h1>
 
 ## Persyaratan 📝
 
-Untuk menjalankan jono-ng ada beberapa persyaratan yang harus dipenuhi diantaranya:
+Untuk menjalankan Jono-NG ada beberapa persyaratan yang harus dipenuhi diantaranya:
 
 - Sistem operasi berbasis Linux (seperti [Ubuntu](https://ubuntu.com/), [Debian](https://www.debian.org/), atau [Kali Linux](https://www.kali.org/).
 - [Bash](https://www.gnu.org/software/bash/)
@@ -75,11 +75,7 @@ Opsional
 
 ## Instal 🔧
 
-Cara menginstal jono-ng dapat dilihat di sini: [https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL](https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL)
-
-## Demonstrasi 📽️
-
-Video demonstrasi jono-ng dapat Anda lihat di YouTube melalui tautan berikut: [Segera]()
+Cara menginstal Jono-NG dapat dilihat di sini: [https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL](https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL)
 
 ## Lisensi 📜
 
@@ -89,7 +85,7 @@ Script ini dilisensikan secara gratis. Anda diizinkan untuk menggunakan, menyali
 
 Pemberitahuan hak cipta dan lisensi ini disertakan dalam semua salinan atau bagian substansial dari script.
 
-Script diberikan "sebagaimana adanya", tanpa jaminan apa pun, termasuk jaminan kelayakan untuk diperjualbelikan, kesesuaian untuk tujuan tertentu, atau bebas dari pelanggaran.
+Script diberikan "**sebagaimana adanya**", tanpa jaminan apa pun, termasuk jaminan kelayakan untuk diperjualbelikan, kesesuaian untuk tujuan tertentu, atau bebas dari pelanggaran.
 
 Lihat [LICENSE](https://github.com/fixploit03/jono-ng/blob/main/LICENSE) untuk detail lengkap.
 
@@ -107,6 +103,6 @@ Silakan buka [Issue](https://github.com/fixploit03/jono-ng/issues) untuk melapor
 
 - **John the Ripper Team**: Untuk alat cracking kata sandi yang luar biasa.
 - **Komunitas Open-Source**: Untuk inspirasi dan dukungan.
-- **Pengguna**: Untuk mencoba dan memberikan masukan pada jono-ng.
+- **Pengguna**: Untuk mencoba dan memberikan masukan pada Jono-NG.
 
 > **Catatan**: Script ini adalah proyek edukasi. Hargai privasi dan hak orang lain. Mari bersama-sama membangun komunitas keamanan siber yang bertanggung jawab!
