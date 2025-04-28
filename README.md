@@ -49,7 +49,7 @@ jono-ng</h1>
 - **Penanganan Kesalahan**:  
   Memberikan pesan kesalahan yang informatif ketika terjadi masalah. tidak terenkripsi.
 - **Dapat Disesuaikan**:  
-   Memungkinkan pengguna untuk menentukan wordlist, panjang kata sandi, pola mask, dan set karakter.
+   Memungkinkan pengguna untuk menentukan `wordlist`, `panjang kata sandi`, `pola mask`, dan `set karakter`.
 
 ## Persyaratan 📝
 
