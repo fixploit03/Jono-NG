@@ -33,22 +33,21 @@ jono-ng</h1>
 
 ## Fitur ✨
 
-- **Antarmuka Interaktif**:  
-  Menu berbasis teks dengan banner ASCII art untuk setiap jenis file, memudahkan navigasi.
-- **Dukungan Beragam File**:  
-  Mendukung cracking kata sandi untuk file `ZIP`, `RAR`, `7z`, `PDF`, dan `dokumen Office` (`.docx`, `.xlsx`, `.pptx`).
-- **Berbagai Teknik Cracking**:  
+- **Antarmuka Pengguna yang Ramah**:  Script ini menyediakan menu berbasis CLI (Command Line Interface) yang mudah digunakan dengan tampilan berwarna dan petunjuk yang jelas.
+- **Dukungan Berbagai Format File Terenkripsi**:
+  - File ZIP (`.zip`)
+  - File RAR (`.rar`)
+  - File 7z (`.7z`)
+  - Dokumen PDF (`.pdf`)
+  - Dokumen Microsoft Office (`.docx`, `.xlsx`, `.pptx`)
+- **Beragam Teknik Cracking Kata Sandi**:  
   - [Dictionary Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/DICT.md)
   - [Brute Force Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/BRUTE.md)
   - [Mask Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/MASK.md)
   - [Prince Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/PRINCE.md)
   - [Subsets Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/SUBSETS.md)
-- **Validasi Input**:  
-   Memeriksa keberadaan dan keabsahan file target serta wordlist.
-- **Manajemen Proses**:  
-  - Menampilkan waktu mulai dan selesai proses cracking.
-  - Membersihkan file sementara (`hash`, `pot`) setelah selesai.
-  - Penanganan error seperti file rusak atau tidak terenkripsi.
+- **Penanganan Kesalahan**:  
+  Memberikan pesan kesalahan yang informatif ketika terjadi masalah. tidak terenkripsi.
 - **Dapat Disesuaikan**:  
    Memungkinkan pengguna untuk menentukan wordlist, panjang kata sandi, pola mask, dan set karakter.
 
