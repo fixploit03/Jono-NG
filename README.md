@@ -27,7 +27,7 @@ jono-ng</h1>
 
 ![](https://github.com/fixploit03/jono-ng/blob/main/img/Screenshot%20jono-ng.png)
 
-**`jono-ng` adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (`JtR`) dalam cracking kata sandi file terenkripsi seperti `ZIP`, `RAR`, `7z`, `PDF`, dan `dokumen Microsoft Office` (`.docx`, `.xlsx`, `.pptx`).** 
+`jono-ng` adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (`JtR`) dalam cracking kata sandi file terenkripsi seperti `ZIP`, `RAR`, `7z`, `PDF`, dan `dokumen Microsoft Office` (`.docx`, `.xlsx`, `.pptx`).
 
 > ⚠️ **DISCLAIMER**: Script ini hanya untuk tujuan edukasi. Penggunaan untuk aktivitas ilegal atau tanpa izin adalah melanggar hukum. Pembuat tidak bertanggung jawab atas penyalahgunaan script ini. Gunakan dengan bijak dan hanya pada file yang Anda miliki.
 
@@ -53,23 +53,25 @@ jono-ng</h1>
 
 ## Persyaratan 📝
 
-Untuk menjalankan jono-ng, alat dan dependensi berikut harus terinstal:
+Untuk menjalankan jono-ng ada beberapa persyaratan yang harus dipenuhi diantaranya:
 
-- **John the Ripper (`JtR`) suite**, termasuk:
-  - **john** (alat cracking utama)
-  - **zip2john** (Untuk mengekstrak hash dari file ZIP)
-  - **rar2john** (Untuk mengekstrak hash dari file RAR)
-  - **7z2john.pl** (Untuk mengekstrak hash dari file 7z)
-  - **pdf2john.py** (Untuk mengekstrak hash dari file PDF)
-  - **office2john.py** (Untuk mengekstrak hash dari file Office (`.docx`, `.xlsx`, `.pptx`))
-- **Python 3** (Dibutuhkan untuk menjalankan script seperti `office2john.py`)
-- **Perl** (Dibutuhkan untuk menjalankan script seperti `7z2john.pl` dan `pdf2john.pl`)
-- **Bash** (Dibutuhkan untuk menjalankan script jono-ng)
-- **Sistem operasi berbasis Linux** (misalnya, `Ubuntu`, `Kali Linux`, `Debian`).
+- Sistem operasi berbasis Linux (seperti [Ubuntu](https://ubuntu.com/), [Debian](https://www.debian.org/), atau [Kali Linux](https://www.kali.org/).
+- [Bash](https://www.gnu.org/software/bash/)
+- [Python 3](https://www.python.org/)
+- [Perl](https://www.perl.org/)
+- [John the Ripper suite](https://github.com/openwall/john), termasuk:
+  - john
+  - zip2john
+  - rar2john
+  - 7z2john.pl
+  - pdf2john.pl
+  - office2john.py
 
 Opsional
 
 - **File wordlist** (misalnya, `rockyou.txt`) untuk serangan `Dictionary Attack` dan `Prince Attack`.
+
+> Kalau ingin mengunduh wordlist rockyou.txt, linknya ada di sini: [https://github.com/praetorian-inc/Hob0Rules/raw/refs/heads/master/wordlists/rockyou.txt.gz](https://github.com/praetorian-inc/Hob0Rules/raw/refs/heads/master/wordlists/rockyou.txt.gz)
 
 ## Instal 🔧
 
