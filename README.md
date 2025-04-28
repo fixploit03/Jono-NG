@@ -27,7 +27,7 @@ jono-ng</h1>
 
 ![](https://github.com/fixploit03/jono-ng/blob/main/img/Screenshot%20jono-ng.png)
 
-**`jono-ng` adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (`JtR`) dalam cracking kata sandi file terenkripsi seperti `ZIP`, `RAR`, `7z`, `PDF`, dan `dokumen Microsoft Office` (`.docx`, `.xlsx`, `.pptx`).** script ini menyediakan antarmuka berbasis teks yang interaktif dan ramah pengguna, mengotomatiskan proses ekstraksi hash dan cracking dengan berbagai teknik seperti `Dictionary Attack`, `Brute Force`, `Mask Attack`, `Prince Attack`, dan `Subsets Attack`. Dibuat untuk tujuan edukasi dan pembelajaran keamanan siber, script ini menekankan penggunaan yang etis, legal, dan bertanggung jawab, hanya pada file yang dimiliki pengguna.
+**`jono-ng` adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (`JtR`) dalam cracking kata sandi file terenkripsi seperti `ZIP`, `RAR`, `7z`, `PDF`, dan `dokumen Microsoft Office` (`.docx`, `.xlsx`, `.pptx`).** 
 
 > ⚠️ **DISCLAIMER**: Script ini hanya untuk tujuan edukasi. Penggunaan untuk aktivitas ilegal atau tanpa izin adalah melanggar hukum. Pembuat tidak bertanggung jawab atas penyalahgunaan script ini. Gunakan dengan bijak dan hanya pada file yang Anda miliki.
 
@@ -38,19 +38,17 @@ jono-ng</h1>
 - **Dukungan Beragam File**:  
   Mendukung cracking kata sandi untuk file `ZIP`, `RAR`, `7z`, `PDF`, dan `dokumen Office` (`.docx`, `.xlsx`, `.pptx`).
 - **Berbagai Teknik Cracking**:  
-  - [Dictionary Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/DICT.md) (menggunakan wordlist).
-  - [Brute Force Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/BRUTE.md) (mencoba semua kombinasi karakter).
-  - [Mask Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/MASK.md) (menggunakan pola mask seperti `huruf kecil ?l`, `huruf besar ?u`. `angka ?d`, `simbol ?s` dan kombinasi semuanya `huruf kecil, huruf besar, angka dan simbil ?a`).
-  - [Prince Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/PRINCE.md) (kombinasi kata dari wordlist).
-  - [Subsets Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/SUBSETS.md) (kombinasi karakter tertentu).
+  - [Dictionary Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/DICT.md)
+  - [Brute Force Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/BRUTE.md)
+  - [Mask Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/MASK.md)
+  - [Prince Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/PRINCE.md)
+  - [Subsets Attack](https://github.com/fixploit03/jono-ng/blob/main/doc/SUBSETS.md)
 - **Validasi Input**:  
    Memeriksa keberadaan dan keabsahan file target serta wordlist.
 - **Manajemen Proses**:  
   - Menampilkan waktu mulai dan selesai proses cracking.
   - Membersihkan file sementara (`hash`, `pot`) setelah selesai.
   - Penanganan error seperti file rusak atau tidak terenkripsi.
-- **Warna Teks**:  
-   Menggunakan kode ANSI untuk membedakan informasi, error, dan input pengguna.
 - **Dapat Disesuaikan**:  
    Memungkinkan pengguna untuk menentukan wordlist, panjang kata sandi, pola mask, dan set karakter.
 
