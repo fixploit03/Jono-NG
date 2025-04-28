@@ -1,7 +1,7 @@
 <div></div>
 
 <h1 align="center">
-  <img src="https://github.com/fixploit03/jono-ng/blob/main/img/icon%20jono-ng.png" width=175 height=175/><br>
+  <img src="https://github.com/fixploit03/jono-ng/blob/main/img/icon.png" width=175 height=175/><br>
 jono-ng</h1>
 
 <p align="center">
