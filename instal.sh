@@ -26,7 +26,7 @@ function cek_root(){
 # Fungsi untuk menampilkan banner (OK)
 function banner(){
         clear
-	      echo ""
+	echo ""
         echo -e "              ${i}@@@@@@@@@@@@@${r}                        "
         echo -e "           ${i}@@@@@@@@@@@@@@@@@@@@@${r}                    "
         echo -e "        ${i}@@@@@@@@@@@${h}========${r}${i}@@@@@@@@${r}                 "
@@ -37,7 +37,7 @@ function banner(){
         echo -e " ${i}@@@@@@@@@@@@@${h}====${r}${i}@@@@@@@@@@@${h}==${r}${i}@@@@@@@@@@@${r}          "
         echo -e " ${i}@@@@@@@@@@@@@${h}====${r}${i}@@@@@@@@@@@@@@@@@@@@@@@@${r}          "
         echo -e "${i}@@@@@@@@@@@@@@${h}+==================+${r}${i}@@@@@@@@${r}          "
-	      echo -e "${i}@@@@@@@@@${h}===${r}${i}@@@@@${h}=================${r}${i}@@@@@@@@@      ${p}Selamat datang di menu instalasi ${nama}!${r}"
+	echo -e "${i}@@@@@@@@@${h}===${r}${i}@@@@@${h}=================${r}${i}@@@@@@@@@      ${p}Selamat datang di menu instalasi ${nama}!${r}"
         echo -e "${i}@@@@@@@@@${h}=====${r}${i}@@@@@@${h}==============${r}${i}@@@@@@@@@      ${p}Github: ${github}${r}"
         echo -e "${i}@@@@@@@@@@@@${h}=====${r}${i}@@@@@@@@${h}=========${r}${i}@@@@@@@@@      ${b}---------------------------------------------${r}"
         echo -e " ${i}@@@@@@@@@@@@@${h}=====${r}${i}@@@@@@${h}=========${r}${i}@@@@@@@@${r}          "
@@ -51,7 +51,6 @@ function banner(){
         echo -e "           ${i}@@@@@@@@@@@@@@@@@@@@@${r}                    "
         echo -e "                ${i}@@@@@@@@@@@@${r}                        "
 	echo ""
-
 }
 
 # Fungsi untuk mengonfirmasi proses instalasi (OK)
