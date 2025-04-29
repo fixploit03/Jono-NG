@@ -85,19 +85,25 @@ Opsional
 
 - **File wordlist** (misalnya, `rockyou.txt`) untuk serangan `Dictionary Attack` dan `Prince Attack`.
 
-> Kalau ingin mengunduh wordlist rockyou.txt, linknya ada di sini: [https://github.com/praetorian-inc/Hob0Rules/raw/refs/heads/master/wordlists/rockyou.txt.gz](https://github.com/praetorian-inc/Hob0Rules/raw/refs/heads/master/wordlists/rockyou.txt.gz)
+> Kalau ingin mengunduh wordlist rockyou.txt, linknya ada [di sini](https://github.com/praetorian-inc/Hob0Rules/raw/refs/heads/master/wordlists/rockyou.txt.gz).
 
 ## Cara Menginstal
 
-Cara menginstal Jono-NG dapat dilihat di sini: [https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL](https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL)
+Untuk menginstal Jono-NG, cukup salin dan jalankan perintah berikut:
+
+```
+sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/fixploit03/Jono-NG/refs/heads/main/instal.sh)"
+```
+
+> Proses instalasinya memang agak lama, jadi santai aja dulu, bisa sambil ngopi, Bang.
 
 ## Cara Menggunakan
 
-Cara menggunakan Jono-NG dapat dilihat di sini [https://github.com/fixploit03/Jono-NG/blob/main/doc/USAGE.md](https://github.com/fixploit03/Jono-NG/blob/main/doc/USAGE.md)
+Cara menggunakan Jono-NG dapat dilihat [di sini](https://github.com/fixploit03/Jono-NG/blob/main/doc/USAGE.md).
 
 ## Demonstrasi
 
-Video demonstrasi Jono-NG dapat dilihat di sini: [https://youtu.be/r-zpLuvNEks?si=16H5IQCfyN8FLNAP](https://youtu.be/r-zpLuvNEks?si=16H5IQCfyN8FLNAP)
+Video demonstrasi Jono-NG dapat dilihat [di sini](https://youtu.be/r-zpLuvNEks?si=16H5IQCfyN8FLNAP).
 
 ## Lisensi
 
