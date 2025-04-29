@@ -60,7 +60,7 @@ ir=$'\e[0m'    # input reset
 # Tentang script (OK)
 #
 nama="Jono-NG"
-deskripsi="Jono-NG adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (JtR) dalam cracking kata sandi file terenkripsi seperti ZIP, RAR, 7z, PDF, dan dokumen Microsoft Office (.docx, .xlsx, .pptx)."
+deskripsi="Crack Kata Sandi File Terenkripsi dengan John the Ripper"
 versi="1.0"
 pembuat="Rofi (Fixploit03)"
 github="https://github.com/fixploit03/Jono-NG"
