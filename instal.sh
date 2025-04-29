@@ -111,7 +111,7 @@ function instal_dependensi(){
 	echo -e "${b}[*] ${p}Menginstal semua dependensi yang diperlukan oleh ${nama}...${r}"
 	for dependensi in "${daftar_dependensi[@]}"; do
 		echo -e "${b}[*] ${p}Menginstal ${dependensi}...${r}"
-		if apt-get install "${dependensi}"; then
+		if apt-get install "${dependensi}" -y; then
 			echo -e "${h}[+] ${p}Berhasil menginstal ${dependensi}.${r}"
 		else
 			echo -e "${m}[-] ${p}Gagal menginstal ${dependensi}.${r}"
