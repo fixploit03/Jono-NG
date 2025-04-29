@@ -5,4 +5,4 @@ Exec=pkexec /usr/local/bin/jono-ng
 Icon=/opt/Jono-NG/img/icon.png
 Terminal=true
 Type=Application
-Categories=PasswordAttack;
+Categories=05-02-offline-attacks;05-password-attacks;
