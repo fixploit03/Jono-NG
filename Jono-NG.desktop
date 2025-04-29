@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Jono-NG
+Comment=Crack Kata Sandi File Terenkripsi dengan John the Ripper
+Exec=pkexec /usr/local/bin/jono-ng
+Icon=/opt/Jono-NG/img/icon.png
+Terminal=true
+Type=Application
+Categories=PasswordAttack;
