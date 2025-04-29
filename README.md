@@ -41,9 +41,9 @@ Jono-NG</h1>
 
 `Jono-NG` adalah script Bash open-source yang dirancang untuk mempermudah penggunaan John the Ripper (`JtR`) dalam cracking kata sandi file terenkripsi seperti `ZIP`, `RAR`, `7z`, `PDF`, dan `Microsoft Office` (`.docx`, `.xlsx`, `.pptx`).
 
-> ⚠️ **DISCLAIMER**: Script ini hanya untuk tujuan edukasi. Penggunaan untuk aktivitas ilegal atau tanpa izin adalah melanggar hukum. Pembuat tidak bertanggung jawab atas penyalahgunaan script ini. Gunakan dengan bijak dan hanya pada file yang Anda miliki.
+> **DISCLAIMER**: Script ini hanya untuk tujuan edukasi. Penggunaan untuk aktivitas ilegal atau tanpa izin adalah melanggar hukum. Pembuat tidak bertanggung jawab atas penyalahgunaan script ini. Gunakan dengan bijak dan hanya pada file yang Anda miliki.
 
-## Fitur ✨
+## Fitur
 
 - **Antarmuka Pengguna yang Ramah**:  Script ini menyediakan menu berbasis CLI (Command Line Interface) yang mudah digunakan dengan tampilan berwarna dan petunjuk yang jelas.
 - **Dukungan Berbagai Format File Terenkripsi**:
@@ -65,7 +65,7 @@ Jono-NG</h1>
 - **Penyimpanan Hasil**:  
   Menyimpan informasi file yang berhasil di-crack dalam format CSV.
 
-## Persyaratan 📝
+## Persyaratan
 
 Untuk menjalankan Jono-NG ada beberapa persyaratan yang harus dipenuhi diantaranya:
 
@@ -87,15 +87,19 @@ Opsional
 
 > Kalau ingin mengunduh wordlist rockyou.txt, linknya ada di sini: [https://github.com/praetorian-inc/Hob0Rules/raw/refs/heads/master/wordlists/rockyou.txt.gz](https://github.com/praetorian-inc/Hob0Rules/raw/refs/heads/master/wordlists/rockyou.txt.gz)
 
-## Instal 🔧
+## Cara Menginstal
 
 Cara menginstal Jono-NG dapat dilihat di sini: [https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL](https://github.com/fixploit03/jono-ng/blob/main/doc/INSTAL)
 
-## Demonstrasi 🎥
+## Cara Menggunakan
 
-Video demonstrasi Jono-NG dapat dilihat di YouTube melalui link berikut: [https://youtu.be/r-zpLuvNEks?si=16H5IQCfyN8FLNAP](https://youtu.be/r-zpLuvNEks?si=16H5IQCfyN8FLNAP)
+Cara menggunakan Jono-NG dapat dilihat di sini [https://github.com/fixploit03/Jono-NG/blob/main/doc/USAGE.md](https://github.com/fixploit03/Jono-NG/blob/main/doc/USAGE.md)
 
-## Lisensi 📜
+## Demonstrasi
+
+Video demonstrasi Jono-NG dapat dilihat di sini: [https://youtu.be/r-zpLuvNEks?si=16H5IQCfyN8FLNAP](https://youtu.be/r-zpLuvNEks?si=16H5IQCfyN8FLNAP)
+
+## Lisensi
 
 **Hak Cipta © 2025 Rofi (Fixploit03)**
 
@@ -107,7 +111,7 @@ Script diberikan "**sebagaimana adanya**", tanpa jaminan apa pun, termasuk jamin
 
 Lihat [LICENSE](https://github.com/fixploit03/jono-ng/blob/main/LICENSE) untuk detail lengkap.
 
-## Kontak 👤
+## Kontak
 
 Untuk pertanyaan, saran, atau laporan bug:
 
@@ -117,7 +121,7 @@ Untuk pertanyaan, saran, atau laporan bug:
 
 Silakan buka [Issue](https://github.com/fixploit03/jono-ng/issues) untuk melaporkan masalah atau mengusulkan fitur baru.
 
-## Ucapan Terima Kasih 🙏🏻
+## Ucapan Terima Kasih
 
 - **John the Ripper Team**: Untuk alat cracking kata sandi yang luar biasa.
 - **Komunitas Open-Source**: Untuk inspirasi dan dukungan.
