@@ -75,7 +75,7 @@ function konfirmasi(){
 # Fungsi untuk mengecek koneksi internet
 function cek_koneksi_internet(){
 	echo -e "${b}[*] ${p}Mengecek koneksi internet...${r}"
-	if ping -c 4 -W 2 google.com &>/dev/null; then
+	if ping -c 4 -W 2 google.com; then
 		echo -e "${h}[+] ${p}Anda memiliki Koneksi internet.${r}"
 	else
 		echo -e "${m}[-] ${p}Anda tidak memiliki koneksi internet.${r}"
