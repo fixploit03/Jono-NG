@@ -20,8 +20,6 @@ Brute Force Attack adalah teknik serangan keamanan siber di mana penyerang menco
 ## Kelebihan:
 
 - **Jaminan Keberhasilan**: Jika diberi waktu cukup, pasti berhasil karena mencoba setiap kemungkinan.
-- **Universalitas**: Dapat digunakan pada berbagai jenis sistem otentikasi tanpa memerlukan informasi khusus.
-- **Kesederhanaan**: Relatif mudah diimplementasikan dan tidak memerlukan pengetahuan mendalam tentang target.
 - **Efektivitas pada Kata Sandi Lemah**: Sangat efektif untuk kata sandi pendek atau sederhana.
 - **Tidak Memerlukan Kamus**: Tidak membutuhkan database kata atau frasa seperti Dictionary Attack.
 
@@ -29,8 +27,6 @@ Brute Force Attack adalah teknik serangan keamanan siber di mana penyerang menco
 
 - **Membutuhkan Waktu Lama**: Sangat lambat untuk kata sandi yang kompleks dan panjang.
 - **Konsumsi Sumber Daya Tinggi**: Membutuhkan daya komputasi yang besar.
-- **Mudah Dideteksi**: Upaya berulang dalam waktu singkat biasanya memicu sistem deteksi serangan.
-- **Sering Diblokir**: Banyak sistem modern menerapkan pembatasan percobaan login atau penundaan setelah beberapa kali gagal.
 - **Tidak Efisien**: Dibandingkan dengan teknik serangan lain seperti Dictionary Attack, Brute Force membutuhkan waktu jauh lebih lama untuk kata sandi yang kompleks.
 
 
