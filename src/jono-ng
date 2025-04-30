@@ -355,7 +355,7 @@ function input_file(){
         fi
 
         while true; do
-                read -r -p "${ib}[#] ${ip}Masukkan nama file ${jenis_file}: " file
+                read -e -r -p "${ib}[#] ${ip}Masukkan nama file ${jenis_file}: " file
                 file=$(echo "${file}" | sed -e "s/^[ \t]*//" -e "s/[ \t]*$//" -e "s/^['\"]//" -e "s/['\"]$//")
                 if [[ -z "${file}" ]]; then
                         echo -e "${m}[-] ${p}Nama file ${jenis_file} tidak boleh kosong.${r}"
@@ -546,7 +546,7 @@ function ekstrak_hash_file(){
 #
 function seting_wordlist(){
         while true; do
-                read -r -p "${ib}[#] ${ip}Masukkan nama file Wordlist: " file_wordlist
+                read -e -r -p "${ib}[#] ${ip}Masukkan nama file Wordlist: " file_wordlist
                 file_wordlist=$(echo "${file_wordlist}" | sed -e "s/^[ \t]*//" -e "s/[ \t]*$//" -e "s/^['\"]//" -e "s/['\"]$//")
                 if [[ -z "${file_wordlist}" ]]; then
                         echo -e "${m}[-] ${p}Nama file Wordlist tidak boleh kosong.${r}"
