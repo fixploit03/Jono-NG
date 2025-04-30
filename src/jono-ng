@@ -130,7 +130,7 @@ function cek_tools(){
                 sleep 1
                 if command -v "${alat}" &>/dev/null; then
                         echo -e "${h}[OK] ${p}${alat} -> ${h}Sudah terinstal${r}"
-                elif [[ -x "${folder_tools}/${alat}" || -x "${folder_tools}/${alat}.pl" || -x "${folder_tools}/${alat}.exe" || -x "${folder_tools}/${alat}.py" ]]; then
+                elif [[ -x "${folder_tools}/${alat}" || -x "${folder_tools}/${alat}.pl" || -x "${folder_tools}/${alat}.py" ]]; then
                         echo -e "${h}[OK] ${p}${alat} -> ${h}Sudah terinstal${r}"
                 else
                         echo -e "${m}[ERROR] ${p}${alat} -> ${m}Belum terinstal${r}"
