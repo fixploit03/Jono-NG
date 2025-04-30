@@ -25,21 +25,13 @@ Dictionary Attack adalah teknik serangan keamanan siber di mana penyerang mencob
   Banyak pengguna masih menggunakan kata-kata umum atau modifikasi simpel sebagai kata sandi.
 - **Konsumsi Sumber Daya Lebih Rendah**:  
   Membutuhkan daya komputasi lebih kecil dibanding Brute Force Attack.
-- **Dapat Ditingkatkan**:  
-  Wordlist dapat dipersonalisasi dengan informasi spesifik tentang target (`nama hewan peliharaan`, `tanggal lahir`, `dll`).
-- **Fleksibilitas**:  
-  Dapat dikombinasikan dengan aturan modifikasi (`mengganti huruf dengan angka`, `menambahkan tahun`, `dll`).
 
 ## Kekurangan:
 
 - **Keterbatasan Daftar**:  
   Hanya efektif jika kata sandi target ada dalam Wordlist.
-- **Tidak Menjamin Keberhasilan**:  
-  Tidak seperti Brute Force Attack, tidak menjamin akan menemukan kata sandi.
 - **Membutuhkan Wordlist Berkualitas**:  
   Efektivitas sangat bergantung pada kualitas dan kelengkapan Wordlist yang digunakan.
-- **Tetap Dapat Dideteksi**:  
-  Upaya login berulang masih dapat memicu sistem deteksi serangan.
 - **Tidak Efektif untuk Kata Sandi Acak**:  
   Tidak berguna melawan kata sandi yang benar-benar acak dan kompleks.
 
