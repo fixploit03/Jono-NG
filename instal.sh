@@ -1,5 +1,10 @@
 #!/bin/bash
+#-----------------------------------------------------
 # Script installer Jono-NG
+#
+# Dibuat oleh Rofi (Fixploit03)
+# Github: https://github.com/fixploit03/Jono-NG
+#-----------------------------------------------------
 
 # Variabel warna (OK)
 i="\e[30m"     # Hitam
