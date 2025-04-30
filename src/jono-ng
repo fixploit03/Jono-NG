@@ -753,7 +753,6 @@ function run_john(){
 
         if [[ -f "${file_pot}" ]]; then
                 if grep -qo ":" "${file_pot}"; then
-                        # kata_sandi=$(cat "${file_pot}" | cut -d ':' -f 2)
                         kata_sandi=$(cut -d ':' -f 2 "${file_pot}")
                         simpan_hasil_file_yang_berhasil_dicrack
                         echo ""
