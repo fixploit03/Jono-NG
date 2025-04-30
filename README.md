@@ -117,15 +117,18 @@ Script diberikan "**sebagaimana adanya**", tanpa jaminan apa pun, termasuk jamin
 
 Lihat [LICENSE](https://github.com/fixploit03/jono-ng/blob/main/LICENSE) untuk detail lengkap.
 
-## Kontak
+## Dukungan
 
-Untuk pertanyaan, saran, atau laporan bug:
+Jika Anda menyukai proyek ini atau merasa bahwa proyek ini bermanfaat, Anda dapat mendukung proyek ini dengan cara berikut:
+
+- Beri bintang pada repositori ini di GitHub untuk membantu orang lain menemukannya.
+- Beri umpan balik dengan membuka [issue](https://github.com/fixploit03/jono-ng/issues) atau memberikan saran perbaikan.
+
+## Kontak
 
 - **Pembuat**: Rofi (Fixploit03)
 - **GitHub**: fixploit03
 - **Email**: fixploit03@gmail.com
-
-Silakan buka [Issue](https://github.com/fixploit03/jono-ng/issues) untuk melaporkan masalah atau mengusulkan fitur baru.
 
 ## Ucapan Terima Kasih
 
@@ -134,3 +137,5 @@ Silakan buka [Issue](https://github.com/fixploit03/jono-ng/issues) untuk melapor
 - **Pengguna**: Untuk mencoba dan memberikan masukan pada Jono-NG.
 
 > **Catatan**: Script ini adalah proyek edukasi. Hargai privasi dan hak orang lain. Mari bersama-sama membangun komunitas keamanan siber yang bertanggung jawab!
+
+**Terima kasih telah menggunakan Jono-NG! Semoga bermanfaat.**
