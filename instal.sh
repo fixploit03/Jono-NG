@@ -167,7 +167,7 @@ function kloning_jtr(){
 			fi
 			# Membersihkan file build sebelumnya
 			echo -e "${b}[*] ${p}Membersihkan file build sebelumnya...${r}"
-			if sudo make -s clean; then
+			if make -s clean; then
 				echo -e "${h}[+] ${p}Berhasil membersihkan file build sebelumnya.${r}"
 			else
 				echo -e "${m}[-] ${p}Gagal membersihkan file build sebelumnya.${r}"
@@ -175,7 +175,7 @@ function kloning_jtr(){
 			fi
 			# Mengompilasi John the Ripper
 			echo -e "${b}[*] ${p}Mengompilasi John the Ripper...${r}"
-			if sudo make -sj"$(nproc)"; then
+			if make -sj"$(nproc)"; then
 				echo -e  "${h}[+] ${p}Berhasil mengompilasi John the Ripper${r}"
 			else
 				echo -e "${m}[-] ${p}Gagal mengompilasi John the Ripper.${r}"
@@ -215,26 +215,27 @@ function instal_jono_ng(){
 	cd .. || exit 1
 
 	# Menambahkan Desktop icon Jono-NG
-	echo -e "${b}[*] ${p}Menambahkan Desktop icon ${nama}...${r}"
-	if cp "${nama}.desktop" "/usr/share/applications/"; then
-		echo -e "${h}[+] ${p}Berhasil menambahkan Desktop icon ${nama}.${r}"
-		# Memperbarui database Desktop icon
-		echo -e "${b}[*] ${p}Memperbarui database Desktop icon...${r}"
-		if update-desktop-database; then
-			echo -e "${h}[+] ${p}Berhasil memperbarui database Desktop icon.${r}"
-		else
-			echo -e "${m}[-] ${p}Gagal memperbarui database Desktop icon.${r}"
-			exit 1
-		fi
-	else
-		echo -e "${m}[-] ${p}Gagal menambahkan Desktop icon ${nama}.${r}"
-		exit 1
-	fi
+	# echo -e "${b}[*] ${p}Menambahkan Desktop icon ${nama}...${r}"
+	# if cp "${nama}.desktop" "/usr/share/applications/"; then
+	#	echo -e "${h}[+] ${p}Berhasil menambahkan Desktop icon ${nama}.${r}"
+	#	# Memperbarui database Desktop icon
+	#	echo -e "${b}[*] ${p}Memperbarui database Desktop icon...${r}"
+	#	if update-desktop-database; then
+	#		echo -e "${h}[+] ${p}Berhasil memperbarui database Desktop icon.${r}"
+	#	else
+	#		echo -e "${m}[-] ${p}Gagal memperbarui database Desktop icon.${r}"
+	#		exit 1
+	#	fi
+	# else
+	#	echo -e "${m}[-] ${p}Gagal menambahkan Desktop icon ${nama}.${r}"
+	#	exit 1
+	# fi
 
 	echo -e "${b}[*] ${p}Proses instalasi selesai.${r}"
 	echo ""
 	echo -e "${h}[+] ${p}${nama} berhasil diinstal.${r}"
-	echo -e "${h}[+] ${p}Untuk menjalankannya ketikkan: ${h}sudo jono-ng${r}"
+	# echo -e "${h}[+] ${p}Untuk menjalankannya ketikkan: ${h}sudo jono-ng${r}"
+        echo -e "${h}[+] ${p}Untuk menjalankannya ketikkan: ${h}jono-ng${r}"
 
 	# Kelar dah
 }
